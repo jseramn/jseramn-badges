@@ -15,16 +15,16 @@ from build_assets import CATALOG
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "svg"
-PNG = ROOT / "dist" / "h48"
-RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/h48"
-H = 48
-MARK = 24
-FONT = 15
-WELL = 29
-WELL_PAIR = 34
-PAD_L, GAP, PAD_R = 12, 10, 16
-TILE = 26
-TILE_FS = 12
+PNG = ROOT / "dist" / "h40"
+RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/h40"
+H = 40
+MARK = 20
+FONT = 13
+WELL = 24
+WELL_PAIR = 28
+PAD_L, GAP, PAD_R = 10, 9, 13
+TILE = 22
+TILE_FS = 10
 
 HREF = {
     "TypeScript": "https://www.typescriptlang.org",
@@ -177,9 +177,9 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
                 )
             )
         else:
-            pair = 15
+            pair = 14
             marks.append(icon_group(icons[0], PAD_L, cy - pair / 2, pair))
-            marks.append(icon_group(icons[1], PAD_L + pair + 4, cy - pair / 2, pair))
+            marks.append(icon_group(icons[1], PAD_L + 16, cy - pair / 2, pair))
     else:
         marks.append(
             f'<rect x="{PAD_L}" y="{cy - TILE / 2}" width="{TILE}" height="{TILE}" fill="#0a0a0c"/>'
