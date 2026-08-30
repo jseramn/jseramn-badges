@@ -55,6 +55,36 @@ def wrap_png(name: str, png: Path) -> None:
     print("png", dest.name, png.stat().st_size)
 
 
+def raster_on_white(src: Path, dest: Path, fuzz: str = "15%") -> None:
+    subprocess.check_call(
+        [
+            "magick",
+            str(src),
+            "-fuzz",
+            fuzz,
+            "-transparent",
+            "white",
+            "-alpha",
+            "set",
+            "-trim",
+            "+repage",
+            "-resize",
+            f"{SIZE}x{SIZE}",
+            "-background",
+            "none",
+            "-gravity",
+            "center",
+            "-extent",
+            f"{SIZE}x{SIZE}",
+            "-fill",
+            FILL,
+            "-colorize",
+            "100",
+            f"PNG32:{dest}",
+        ]
+    )
+
+
 def raster_mark(src: Path, dest: Path, fuzz: str = "10%") -> None:
     subprocess.check_call(
         [
@@ -192,7 +222,50 @@ def main() -> None:
     wrap_png("scryer", work / "scryer.png")
     raster_mark(HUNT / "gentle-ai-logo.png", work / "gentle-ai.png", "8%")
     wrap_png("gentle-ai", work / "gentle-ai.png")
+    ingest_remaining()
+
+
+def ingest_remaining() -> None:
+    hunt = Path("/tmp/logo-hunt2")
+    work = hunt / "work"
+    work.mkdir(exist_ok=True)
+    raster_mark(hunt / "crush-solo.png", work / "crush.png", "8%")
+    wrap_png("crush", work / "crush.png")
+    raster_on_white(hunt / "hermes-icon.png", work / "hermes.png", "18%")
+    wrap_png("hermes", work / "hermes.png")
+    raster_mark(
+        Path("/home/jseramn/MiroFish/frontend/public/icon.png"),
+        work / "mirofish.png",
+        "12%",
+    )
+    wrap_png("mirofish", work / "mirofish.png")
+    dcode = Path(hunt / "dcode-c12.svg").read_text(encoding="utf-8")
+    dcode = re.sub(
+        r'<path d="M32 0H8C3\.58172[^"]+" fill="#161F34"/>',
+        "",
+        dcode,
+    )
+    write_svg("dcode", dcode)
+    (OFFICIAL / "codegraph.svg").write_text(
+        f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="{FILL}" stroke-width="2">
+  <line x1="16" y1="8" x2="8" y2="23"/>
+  <line x1="16" y1="8" x2="24" y2="23"/>
+  <line x1="8" y1="23" x2="24" y2="23"/>
+  <circle cx="16" cy="8" r="3.4" fill="{FILL}" stroke="none"/>
+  <circle cx="8" cy="23" r="3.4" fill="{FILL}" stroke="none"/>
+  <circle cx="24" cy="23" r="3.4" fill="{FILL}" stroke="none"/>
+</svg>
+''',
+        encoding="utf-8",
+    )
+    print("svg codegraph.svg")
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == "remaining":
+        OFFICIAL.mkdir(parents=True, exist_ok=True)
+        ingest_remaining()
+    else:
+        main()

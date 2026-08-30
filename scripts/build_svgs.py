@@ -15,8 +15,8 @@ from build_assets import CATALOG
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "svg"
-PNG = ROOT / "dist" / "marks"
-RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/marks"
+PNG = ROOT / "dist" / "glyphs"
+RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs"
 H = 40
 
 HREF = {
@@ -62,15 +62,15 @@ HREF = {
     "ChatGPT": "https://chatgpt.com",
     "Qwen Code": "https://qwenlm.github.io",
     "Pi": "https://pi.dev",
-    "Hermes": "https://nousresearch.com",
+    "Hermes": "https://hermes-agent.nousresearch.com",
     "OpenHands": "https://openhands.dev",
     "OpenClaw": "https://openclaw.ai",
     "Mastra Code": "https://mastra.ai",
-    "MiroFish": "https://github.com/jseramn",
-    "dcode": "https://github.com/jseramn",
+    "MiroFish": "https://github.com/666ghj/MiroFish",
+    "dcode": "https://www.langchain.com/dcode",
     "Engram": "https://github.com/Gentleman-Programming/engram",
     "Scryer": "https://github.com/jseramn/scryer",
-    "CodeGraph": "https://github.com/jseramn",
+    "CodeGraph": "https://github.com/colbymchenry/codegraph",
     "Gentle AI": "https://github.com/Gentleman-Programming/gentle-ai",
     "CUA": "https://www.trycua.com",
     "uv": "https://docs.astral.sh/uv",

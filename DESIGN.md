@@ -173,7 +173,7 @@ Hard rectangle. Square corners. Flat and sharp.
 ### Badges (core)
 
 - Height **40px**, width hugs the label. Never clip. Never a huge empty tail.
-- Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/marks/*.png`, left-aligned.
+- Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/glyphs/*.png`, left-aligned.
 - **No stroke.** Radius **0**. No shadow. The square is the clip, not a box drawn around the face.
 - Mark sits on the face, optically centered. Official glyphs **20×20** `#cfcfcf`. Missing marks use the letter-tile recipe in **Missing marks** — same 20×20 slot, never loose text beside the label.
 - Label starts 8px after the well. Geist 12 / 600, `#f2f2f2`. Vertical center shared with the mark (`dominant-baseline: central`, y = 14).
@@ -200,8 +200,6 @@ Letter recipe (deterministic):
 4. Never more than two letters. Never sit the letters as loose text next to the label (`AI` must not read as the start of `Aider`).
 
 Graduation: drop an official SVG at `logos/official/{file-id}.svg` and rebuild. File presence wins over a missing Simple Icons slug. The tile dies. Do not keep both.
-
-Tiles remaining (no vendor mark found, or the only asset was a wide wordmark / unrelated favicon): Crush, Hermes, MiroFish, dcode, CodeGraph.
 
 ### Inputs / buttons
 

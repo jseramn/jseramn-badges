@@ -21,7 +21,11 @@ Official vector marks in `logos/official/` come from two sources:
 | CUA | https://cua.ai/cua_logo_white_new.svg |
 | Doppler | https://www.doppler.com (Sanity asterisk SVG, gradients flattened) |
 | scrcpy | https://github.com/Genymobile/scrcpy `app/data/scrcpy.svg` |
-| Kitty | https://github.com/kovidgoyal/kitty `logo/kitty.svg` |
+| Crush | https://github.com/charmbracelet/crush `internal/ui/notification/crush-icon-solo.png` |
+| Hermes | https://hermes-agent.nousresearch.com/icon.png |
+| MiroFish | https://github.com/666ghj/MiroFish `frontend/public/icon.png` |
+| dcode | https://www.langchain.com/dcode Component 12 SVG |
+| CodeGraph | https://github.com/colbymchenry/codegraph `site/public/favicon.svg` |
 
 xAI assets are used as the light logomark, recolored to `#cfcfcf` so they match the rest of the sheet. See https://x.ai/legal/brand-guidelines.
 

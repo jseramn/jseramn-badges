@@ -23,7 +23,7 @@ If Stitch drops images, re-open the project and paste the sheet with Ctrl+V.
 
 ```
 dist/svg/*.svg        one badge per file
-dist/marks/*.png      profile README glyphs (Camo path)
+dist/glyphs/*.png     profile README glyphs (Camo path)
 dist/profile-fragment.md  GitHub README snippet (`<a><img>`)
 dist/badges.html      local preview sheet
 logos/official/       Simple Icons + vendor marks, recolored #cfcfcf
