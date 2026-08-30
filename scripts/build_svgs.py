@@ -177,7 +177,6 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
             f'font-size="8" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
         )
     label_x = pad_l + well + gap
-    w1 = width * 0.62
     w2 = width * 0.38
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{H}" '
@@ -187,11 +186,6 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
         f'<stop offset="0" stop-color="#050506"/>'
         f'<stop offset="1" stop-color="#1a1a1e"/>'
         f"</linearGradient>"
-        f'<linearGradient id="p1" x1="0" y1="0" x2="1" y2="1">'
-        f'<stop offset="0" stop-color="#b8b8c0"/>'
-        f'<stop offset="0.42" stop-color="#3a3a40"/>'
-        f'<stop offset="1" stop-color="#0a0a0c"/>'
-        f"</linearGradient>"
         f'<linearGradient id="p2" x1="1" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="#6e6e76"/>'
         f'<stop offset="1" stop-color="#0c0c0e"/>'
@@ -200,8 +194,7 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
         f"</defs>"
         f'<g clip-path="url(#face)">'
         f'<rect x="0" y="0" width="{width}" height="{H}" fill="url(#base)"/>'
-        f'<polygon points="0,0 {w1:.1f},0 0,{H}" fill="url(#p1)" opacity="0.55"/>'
-        f'<polygon points="{w2:.1f},{H} {width},{H} {width},0" fill="url(#p2)" opacity="0.4"/>'
+        f'<polygon points="{w2:.1f},{H} {width},{H} {width},0" fill="url(#p2)" opacity="0.2"/>'
         f"{grain_layer(width, H, name)}"
         f"</g>"
         + "".join(marks)
@@ -249,7 +242,7 @@ def main() -> None:
                 ]
                 write_badge(label, "AR", [i for i in icons if i.exists()], dest)
                 href = HREF[label]
-                src = f"{RAW}/anydesk-rustdesk.png?v=5"
+                src = f"{RAW}/anydesk-rustdesk.png?v=6"
                 lines.append(
                     f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(label)}" /></a>'
                 )
@@ -258,7 +251,7 @@ def main() -> None:
             icon = official_path(name)
             write_badge(name, letters, [icon] if icon else [], dest)
             href = HREF.get(name, "https://github.com/jseramn")
-            src = f"{RAW}/{file_id(name)}.png?v=5"
+            src = f"{RAW}/{file_id(name)}.png?v=6"
             lines.append(
                 f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(name)}" /></a>'
             )
