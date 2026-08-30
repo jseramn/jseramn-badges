@@ -175,7 +175,7 @@ Hard rectangle. Square corners. Flat and sharp.
 - Height **40px**, width hugs the label. Never clip. Never a huge empty tail.
 - Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/ico/*.png`, left-aligned.
 - **No stroke.** Radius **0**. No shadow. The square is the clip, not a box drawn around the face.
-- Mark sits on the face, optically centered. Official glyphs **20×20** `#cfcfcf`. Monograms sit on a 22×22 filled square with **no outline**, so `AI` never reads as part of `Aider`.
+- Mark sits on the face, optically centered. Official glyphs **20×20** `#cfcfcf`. Missing marks use the letter-tile recipe in **Missing marks** — same 20×20 slot, never loose text beside the label.
 - Label starts 8px after the well. Geist 12 / 600, `#f2f2f2`. Vertical center shared with the mark (`dominant-baseline: central`, y = 14).
 - AnyDesk and RustDesk remain one chip
 
@@ -183,9 +183,25 @@ Hard rectangle. Square corners. Flat and sharp.
 
 Match the floating documents in the reference: black rectangle, monospace JSON, dog-ear optional, stacked offset. Use only for atmosphere or a single identity card — not behind every badge.
 
-### Placeholder monograms
+### Missing marks
 
-22×22 square well (0 radius), 2-letter Geist Mono 10/600, `#f2f2f2` on `#0a0a0c`. Never sit the letters as loose text next to the label.
+A chip without a Simple Icons / vendor SVG still ships. Never drop a harness because the logo pack is incomplete. Never invent a mascot, bracket, gear, or sparkle to fake a brand.
+
+The missing mark is a **letter tile**, occupying the same 20×20 slot as an official glyph:
+
+- Geist Mono, 10/600, `#f2f2f2` on a flat `#0a0a0c` square, radius 0, **no outline**.
+- The tile is an index, not brand art. Do not present it as the vendor's logo.
+
+Letter recipe (deterministic):
+
+1. One token → first two letters (`Pi` → `PI`, `Crush` → `CR`).
+2. Two or more tokens → initial of the first two distinctive words (`Grok Build` → `GB`, `Open Hands` → `OH`). Skip stopwords.
+3. If two tiles on the same sheet would share a pair, take a more distinctive pair from the later name (`CUA` stays `CU` only while `Cursor` already has a glyph).
+4. Never more than two letters. Never sit the letters as loose text next to the label (`AI` must not read as the start of `Aider`).
+
+Graduation: drop an official SVG at `logos/official/{file-id}.svg`, set the catalog slug, rebuild. The tile dies. Do not keep both.
+
+Simple Icons 404s today (tile until a slug or a vendor SVG exists): Aider, Goose, Crush, Grok, Grok Build, Grok Bot, Pi, Hermes, OpenHands, OpenClaw, Mastra Code, MiroFish, dcode, Engram, Scryer, CodeGraph, Gentle AI, CUA, Doppler, scrcpy, Kitty.
 
 ### Inputs / buttons
 
@@ -193,4 +209,4 @@ Black field, hairline border. Focus = brighter hairline (`#f2f2f2`), no cyan rin
 
 ## Hard fail
 
-White iOS pills. Brand-colored logos. Cyan/pink glow. A title like "Refined Languages Badges Row". Extra tools. Invented mascots. A landing-page hero that ignores the badge matrix.
+White iOS pills. Brand-colored logos. Cyan/pink glow. Invented mascots for tools that only have a letter tile. A title like "Refined Languages Badges Row". Extra tools. A landing-page hero that ignores the badge matrix.
