@@ -115,13 +115,13 @@ spacing:
 
 ## Brand & Style
 
-The attached reference (`noir-reference.jpeg`) is the lock. Tone is `NOIR`: pitch black, grain, dither, overlapping terminal cards, organic smoke on one side and hard architecture on the other. No cyan. No pink. No purple. No brand rainbow.
+The badge-face lock is `noir-planes.jpeg`: overlapping sharp planes, platinum-to-black washes, film grain, no outlines. `noir-reference.jpeg` still locks the page atmosphere. No cyan. No pink. No purple. No brand rainbow.
 
-Personality is calculated and developer-first. Information is silver on black. Structure is hairline rectangles stacked like JSON documents. Atmosphere is stipple. Badge fill is the one allowed gradient: platinum noir metal. If a color is not black, white, or gray, it is wrong.
+Personality is calculated and developer-first. Information is silver on black. Badge edges are the meeting of two tones, never a stroke. If a color is not black, white, or gray, it is wrong.
 
 ## Colors
 
-Canvas is `#000000`. Elevated panels are `#0a0a0a` / `#111111`. Type and glyphs are `#f2f2f2` or `#cfcfcf`. Borders are `#2e2e2e` hairlines — the same thin white/gray edges on the floating cards in the reference.
+Canvas is `#000000`. Elevated panels are `#0a0a0a` / `#111111`. Type and glyphs are `#f2f2f2` or `#cfcfcf`. Page cards may keep a hairline. **Badges have no border.**
 
 - **Primary:** paper white. Active text, icons, JSON keys.
 - **Secondary:** mid gray. Captions, metadata, deactivated.
@@ -155,11 +155,9 @@ Composition borrowed from the reference:
 ## Elevation & Depth
 
 1. Base `#000000`. Cards `#0a0a0a`.
-2. Badge face is a low-contrast noir wash `#2a2a32` → `#121216`. High-contrast top-lit metal reads as a raised button — do not use it.
-3. Grain is **baked 1×1 specks** in the SVG, then the profile ships the **raster PNG**. GitHub strips `feTurbulence` and a query-string cache-bust does not change the pixels they already cached.
-4. 1px hairline `#6a6a72` on all four sides. **No drop shadow. No filter. No lift.**
-4. Overlays may use a 12px blur and a 0.5px `rgba(245,245,245,0.2)` edge — glass as a dark pane, not a rainbow.
-5. No CRT glow. No colored outer glow.
+2. Badge face is overlapping clipped planes (`noir-planes.jpeg`): a dark base wash plus two diagonal platinum wedges. Depth is the join of those planes, not a frame.
+3. Grain is **baked 1×1 specks**. The profile ships `dist/png/*.png`.
+4. **No stroke. No hairline. No drop shadow. No filter. No lift.** The outer shape is a 0-radius rectangle and nothing else.
 
 ## Shapes
 
@@ -175,9 +173,9 @@ Hard rectangle. Square corners. Flat and sharp.
 ### Badges (core)
 
 - Height **32px**, width hugs the label. Never clip. Never a huge empty tail.
-- Fill: low-contrast noir wash plus baked 1×1 platinum/black grain. Profile README uses `dist/png/*.png`.
-- Stroke 1px `#6a6a72`. Radius **0**. No shadow.
-- Mark sits in an 18×18 square well, optically centered. Official glyphs 14×14 `#cfcfcf`. Monograms live *inside* a 16×16 square well so `AI` never reads as part of `Aider`.
+- Fill: overlapping noir planes plus baked grain. Profile README uses `dist/png/*.png`.
+- **No stroke.** Radius **0**. No shadow. The square is the clip, not a box drawn around the face.
+- Mark sits on the face, optically centered. Official glyphs 14×14 `#cfcfcf`. Monograms sit on a 16×16 filled square with **no outline**, so `AI` never reads as part of `Aider`.
 - Label starts 8px after the well. Geist 12 / 600, `#f2f2f2`. Vertical center shared with the mark (`dominant-baseline: central`, y = 14).
 - AnyDesk and RustDesk remain one chip
 

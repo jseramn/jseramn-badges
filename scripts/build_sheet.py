@@ -133,7 +133,7 @@ def main() -> None:
     height: 32px;
     padding: 0 10px 0 7px;
     gap: 8px;
-    border: 1px solid var(--stroke);
+    border: 0;
     border-radius: 0;
     box-shadow: none;
     background-image:
@@ -169,7 +169,7 @@ def main() -> None:
     height: 16px;
     border-radius: 0;
     background: #0a0a0c;
-    border: 1px solid #3a3a40;
+    border: 0;
     font-family: "Geist Mono", ui-monospace, monospace;
     font-size: 8px;
     font-weight: 600;

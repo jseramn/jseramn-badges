@@ -141,15 +141,15 @@ def icon_group(path: Path, x: float, y: float, size: float = 14) -> str:
 
 def grain_layer(width: int, height: int, seed: str) -> str:
     rng = random.Random(seed)
-    count = max(80, width * height // 5)
+    count = max(160, width * height // 3)
     parts: list[str] = []
     for _ in range(count):
         x = rng.randrange(width)
         y = rng.randrange(height)
-        if rng.random() < 0.52:
-            fill, op = "#c8c8d2", 0.16 + rng.random() * 0.32
+        if rng.random() < 0.55:
+            fill, op = "#d0d0d6", 0.08 + rng.random() * 0.22
         else:
-            fill, op = "#000000", 0.20 + rng.random() * 0.36
+            fill, op = "#000000", 0.10 + rng.random() * 0.28
         parts.append(
             f'<rect x="{x}" y="{y}" width="1" height="1" fill="{fill}" opacity="{op:.2f}"/>'
         )
@@ -171,30 +171,39 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
             marks.append(icon_group(icons[1], pad_l + 12, cy - 5, 10))
     else:
         marks.append(
-            f'<rect x="{pad_l}" y="{cy - 8}" width="16" height="16" '
-            f'fill="#0a0a0c" stroke="#3a3a40"/>'
+            f'<rect x="{pad_l}" y="{cy - 8}" width="16" height="16" fill="#0a0a0c"/>'
             f'<text x="{pad_l + 8:.1f}" y="{cy + 2.8:.1f}" text-anchor="middle" '
             f'font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
             f'font-size="8" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
         )
     label_x = pad_l + well + gap
-    clip = "face"
+    w1 = width * 0.62
+    w2 = width * 0.38
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{H}" '
         f'viewBox="0 0 {width} {H}" role="img" aria-label="{html.escape(name)}">'
         f"<defs>"
-        f'<linearGradient id="pt" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="#2a2a32"/>'
-        f'<stop offset="1" stop-color="#121216"/>'
+        f'<linearGradient id="base" x1="0" y1="1" x2="1" y2="0">'
+        f'<stop offset="0" stop-color="#050506"/>'
+        f'<stop offset="1" stop-color="#1a1a1e"/>'
         f"</linearGradient>"
-        f'<clipPath id="{clip}"><rect x="0" y="0" width="{width}" height="{H}"/></clipPath>'
+        f'<linearGradient id="p1" x1="0" y1="0" x2="1" y2="1">'
+        f'<stop offset="0" stop-color="#b8b8c0"/>'
+        f'<stop offset="0.42" stop-color="#3a3a40"/>'
+        f'<stop offset="1" stop-color="#0a0a0c"/>'
+        f"</linearGradient>"
+        f'<linearGradient id="p2" x1="1" y1="0" x2="0" y2="1">'
+        f'<stop offset="0" stop-color="#6e6e76"/>'
+        f'<stop offset="1" stop-color="#0c0c0e"/>'
+        f"</linearGradient>"
+        f'<clipPath id="face"><rect x="0" y="0" width="{width}" height="{H}"/></clipPath>'
         f"</defs>"
-        f'<g clip-path="url(#{clip})" shape-rendering="crispEdges">'
-        f'<rect x="0" y="0" width="{width}" height="{H}" fill="url(#pt)"/>'
+        f'<g clip-path="url(#face)">'
+        f'<rect x="0" y="0" width="{width}" height="{H}" fill="url(#base)"/>'
+        f'<polygon points="0,0 {w1:.1f},0 0,{H}" fill="url(#p1)" opacity="0.55"/>'
+        f'<polygon points="{w2:.1f},{H} {width},{H} {width},0" fill="url(#p2)" opacity="0.4"/>'
         f"{grain_layer(width, H, name)}"
         f"</g>"
-        f'<rect x="0.5" y="0.5" width="{width - 1}" height="{H - 1}" '
-        f'fill="none" stroke="#6a6a72" shape-rendering="crispEdges"/>'
         + "".join(marks)
         + f'<text x="{label_x}" y="{cy + 4.2:.1f}" '
         f'font-family="system-ui, -apple-system, Segoe UI, sans-serif" '
@@ -240,7 +249,7 @@ def main() -> None:
                 ]
                 write_badge(label, "AR", [i for i in icons if i.exists()], dest)
                 href = HREF[label]
-                src = f"{RAW}/anydesk-rustdesk.png"
+                src = f"{RAW}/anydesk-rustdesk.png?v=5"
                 lines.append(
                     f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(label)}" /></a>'
                 )
@@ -249,7 +258,7 @@ def main() -> None:
             icon = official_path(name)
             write_badge(name, letters, [icon] if icon else [], dest)
             href = HREF.get(name, "https://github.com/jseramn")
-            src = f"{RAW}/{file_id(name)}.png"
+            src = f"{RAW}/{file_id(name)}.png?v=5"
             lines.append(
                 f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(name)}" /></a>'
             )
