@@ -1,0 +1,704 @@
+{
+  "items": [
+    {
+      "category": "languages",
+      "name": "TypeScript",
+      "id": "typescript",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "typescript",
+      "svg": "logos/official/typescript.svg",
+      "png": "stitch/upload/languages/typescript.png"
+    },
+    {
+      "category": "languages",
+      "name": "JavaScript",
+      "id": "javascript",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "javascript",
+      "svg": "logos/official/javascript.svg",
+      "png": "stitch/upload/languages/javascript.png"
+    },
+    {
+      "category": "languages",
+      "name": "Python",
+      "id": "python",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "python",
+      "svg": "logos/official/python.svg",
+      "png": "stitch/upload/languages/python.png"
+    },
+    {
+      "category": "languages",
+      "name": "Go",
+      "id": "go",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "go",
+      "svg": "logos/official/go.svg",
+      "png": "stitch/upload/languages/go.png"
+    },
+    {
+      "category": "languages",
+      "name": "Rust",
+      "id": "rust",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "rust",
+      "svg": "logos/official/rust.svg",
+      "png": "stitch/upload/languages/rust.png"
+    },
+    {
+      "category": "languages",
+      "name": "HTML",
+      "id": "html",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "html5",
+      "svg": "logos/official/html.svg",
+      "png": "stitch/upload/languages/html.png"
+    },
+    {
+      "category": "languages",
+      "name": "CSS",
+      "id": "css",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "css",
+      "svg": "logos/official/css.svg",
+      "png": "stitch/upload/languages/css.png"
+    },
+    {
+      "category": "languages",
+      "name": "Bash",
+      "id": "bash",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "gnubash",
+      "svg": "logos/official/bash.svg",
+      "png": "stitch/upload/languages/bash.png"
+    },
+    {
+      "category": "stack",
+      "name": "React",
+      "id": "react",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "react",
+      "svg": "logos/official/react.svg",
+      "png": "stitch/upload/stack/react.png"
+    },
+    {
+      "category": "stack",
+      "name": "Next.js",
+      "id": "next-js",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "nextdotjs",
+      "svg": "logos/official/next-js.svg",
+      "png": "stitch/upload/stack/next-js.png"
+    },
+    {
+      "category": "stack",
+      "name": "Astro",
+      "id": "astro",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "astro",
+      "svg": "logos/official/astro.svg",
+      "png": "stitch/upload/stack/astro.png"
+    },
+    {
+      "category": "stack",
+      "name": "Tailwind",
+      "id": "tailwind",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "tailwindcss",
+      "svg": "logos/official/tailwind.svg",
+      "png": "stitch/upload/stack/tailwind.png"
+    },
+    {
+      "category": "stack",
+      "name": "Three.js",
+      "id": "three-js",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "threedotjs",
+      "svg": "logos/official/three-js.svg",
+      "png": "stitch/upload/stack/three-js.png"
+    },
+    {
+      "category": "stack",
+      "name": "Node.js",
+      "id": "node-js",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "nodedotjs",
+      "svg": "logos/official/node-js.svg",
+      "png": "stitch/upload/stack/node-js.png"
+    },
+    {
+      "category": "stack",
+      "name": "Bun",
+      "id": "bun",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "bun",
+      "svg": "logos/official/bun.svg",
+      "png": "stitch/upload/stack/bun.png"
+    },
+    {
+      "category": "stack",
+      "name": "pnpm",
+      "id": "pnpm",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "pnpm",
+      "svg": "logos/official/pnpm.svg",
+      "png": "stitch/upload/stack/pnpm.png"
+    },
+    {
+      "category": "stack",
+      "name": "npm",
+      "id": "npm",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "npm",
+      "svg": "logos/official/npm.svg",
+      "png": "stitch/upload/stack/npm.png"
+    },
+    {
+      "category": "stack",
+      "name": "Yarn",
+      "id": "yarn",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "yarn",
+      "svg": "logos/official/yarn.svg",
+      "png": "stitch/upload/stack/yarn.png"
+    },
+    {
+      "category": "stack",
+      "name": "Vite",
+      "id": "vite",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "vite",
+      "svg": "logos/official/vite.svg",
+      "png": "stitch/upload/stack/vite.png"
+    },
+    {
+      "category": "stack",
+      "name": "Postgres",
+      "id": "postgres",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "postgresql",
+      "svg": "logos/official/postgres.svg",
+      "png": "stitch/upload/stack/postgres.png"
+    },
+    {
+      "category": "stack",
+      "name": "Redis",
+      "id": "redis",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "redis",
+      "svg": "logos/official/redis.svg",
+      "png": "stitch/upload/stack/redis.png"
+    },
+    {
+      "category": "stack",
+      "name": "Docker",
+      "id": "docker",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "docker",
+      "svg": "logos/official/docker.svg",
+      "png": "stitch/upload/stack/docker.png"
+    },
+    {
+      "category": "stack",
+      "name": "Vercel",
+      "id": "vercel",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "vercel",
+      "svg": "logos/official/vercel.svg",
+      "png": "stitch/upload/stack/vercel.png"
+    },
+    {
+      "category": "stack",
+      "name": "Cloudflare",
+      "id": "cloudflare",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "cloudflare",
+      "svg": "logos/official/cloudflare.svg",
+      "png": "stitch/upload/stack/cloudflare.png"
+    },
+    {
+      "category": "stack",
+      "name": "Linux",
+      "id": "linux",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "linux",
+      "svg": "logos/official/linux.svg",
+      "png": "stitch/upload/stack/linux.png"
+    },
+    {
+      "category": "stack",
+      "name": "Git",
+      "id": "git",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "git",
+      "svg": "logos/official/git.svg",
+      "png": "stitch/upload/stack/git.png"
+    },
+    {
+      "category": "stack",
+      "name": "GitHub",
+      "id": "github",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "github",
+      "svg": "logos/official/github.svg",
+      "png": "stitch/upload/stack/github.png"
+    },
+    {
+      "category": "stack",
+      "name": "Vim",
+      "id": "vim",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "vim",
+      "svg": "logos/official/vim.svg",
+      "png": "stitch/upload/stack/vim.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Cursor",
+      "id": "cursor",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "cursor",
+      "svg": "logos/official/cursor.svg",
+      "png": "stitch/upload/harnesses/cursor.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Cursor Agent",
+      "id": "cursor-agent",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "cursor",
+      "svg": "logos/official/cursor-agent.svg",
+      "png": "stitch/upload/harnesses/cursor-agent.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Claude Code",
+      "id": "claude-code",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "claude",
+      "svg": "logos/official/claude-code.svg",
+      "png": "stitch/upload/harnesses/claude-code.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "OpenCode",
+      "id": "opencode",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "opencode",
+      "svg": "logos/official/opencode.svg",
+      "png": "stitch/upload/harnesses/opencode.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Cline",
+      "id": "cline",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "cline",
+      "svg": "logos/official/cline.svg",
+      "png": "stitch/upload/harnesses/cline.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Aider",
+      "id": "aider",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/aider.svg",
+      "png": "stitch/upload/harnesses/aider.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Goose",
+      "id": "goose",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/goose.svg",
+      "png": "stitch/upload/harnesses/goose.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Crush",
+      "id": "crush",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/crush.svg",
+      "png": "stitch/upload/harnesses/crush.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Grok",
+      "id": "grok",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/grok.svg",
+      "png": "stitch/upload/harnesses/grok.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Grok Build",
+      "id": "grok-build",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/grok-build.svg",
+      "png": "stitch/upload/harnesses/grok-build.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Grok Bot",
+      "id": "grok-bot",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/grok-bot.svg",
+      "png": "stitch/upload/harnesses/grok-bot.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "ChatGPT",
+      "id": "chatgpt",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "openai",
+      "svg": "logos/official/chatgpt.svg",
+      "png": "stitch/upload/harnesses/chatgpt.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Qwen Code",
+      "id": "qwen-code",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "qwen",
+      "svg": "logos/official/qwen-code.svg",
+      "png": "stitch/upload/harnesses/qwen-code.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Pi",
+      "id": "pi",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/pi.svg",
+      "png": "stitch/upload/harnesses/pi.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Hermes",
+      "id": "hermes",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/hermes.svg",
+      "png": "stitch/upload/harnesses/hermes.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "OpenHands",
+      "id": "openhands",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/openhands.svg",
+      "png": "stitch/upload/harnesses/openhands.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "OpenClaw",
+      "id": "openclaw",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/openclaw.svg",
+      "png": "stitch/upload/harnesses/openclaw.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "Mastra Code",
+      "id": "mastra-code",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/mastra-code.svg",
+      "png": "stitch/upload/harnesses/mastra-code.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "MiroFish",
+      "id": "mirofish",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/mirofish.svg",
+      "png": "stitch/upload/harnesses/mirofish.png"
+    },
+    {
+      "category": "harnesses",
+      "name": "dcode",
+      "id": "dcode",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/dcode.svg",
+      "png": "stitch/upload/harnesses/dcode.png"
+    },
+    {
+      "category": "workshop",
+      "name": "Engram",
+      "id": "engram",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/engram.svg",
+      "png": "stitch/upload/workshop/engram.png"
+    },
+    {
+      "category": "workshop",
+      "name": "Scryer",
+      "id": "scryer",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/scryer.svg",
+      "png": "stitch/upload/workshop/scryer.png"
+    },
+    {
+      "category": "workshop",
+      "name": "CodeGraph",
+      "id": "codegraph",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/codegraph.svg",
+      "png": "stitch/upload/workshop/codegraph.png"
+    },
+    {
+      "category": "workshop",
+      "name": "Gentle AI",
+      "id": "gentle-ai",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/gentle-ai.svg",
+      "png": "stitch/upload/workshop/gentle-ai.png"
+    },
+    {
+      "category": "workshop",
+      "name": "CUA",
+      "id": "cua",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/cua.svg",
+      "png": "stitch/upload/workshop/cua.png"
+    },
+    {
+      "category": "workshop",
+      "name": "uv",
+      "id": "uv",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "uv",
+      "svg": "logos/official/uv.svg",
+      "png": "stitch/upload/workshop/uv.png"
+    },
+    {
+      "category": "workshop",
+      "name": "FFmpeg",
+      "id": "ffmpeg",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "ffmpeg",
+      "svg": "logos/official/ffmpeg.svg",
+      "png": "stitch/upload/workshop/ffmpeg.png"
+    },
+    {
+      "category": "workshop",
+      "name": "Doppler",
+      "id": "doppler",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/doppler.svg",
+      "png": "stitch/upload/workshop/doppler.png"
+    },
+    {
+      "category": "workshop",
+      "name": "scrcpy",
+      "id": "scrcpy",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/scrcpy.svg",
+      "png": "stitch/upload/workshop/scrcpy.png"
+    },
+    {
+      "category": "daily",
+      "name": "Obsidian",
+      "id": "obsidian",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "obsidian",
+      "svg": "logos/official/obsidian.svg",
+      "png": "stitch/upload/daily/obsidian.png"
+    },
+    {
+      "category": "daily",
+      "name": "Kitty",
+      "id": "kitty",
+      "kind": "placeholder",
+      "source": "placeholder-monogram",
+      "simple_icons_slug": null,
+      "svg": "logos/placeholder/kitty.svg",
+      "png": "stitch/upload/daily/kitty.png"
+    },
+    {
+      "category": "daily",
+      "name": "Brave",
+      "id": "brave",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "brave",
+      "svg": "logos/official/brave.svg",
+      "png": "stitch/upload/daily/brave.png"
+    },
+    {
+      "category": "daily",
+      "name": "Chrome",
+      "id": "chrome",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "googlechrome",
+      "svg": "logos/official/chrome.svg",
+      "png": "stitch/upload/daily/chrome.png"
+    },
+    {
+      "category": "daily",
+      "name": "Opera GX",
+      "id": "opera-gx",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "operagx",
+      "svg": "logos/official/opera-gx.svg",
+      "png": "stitch/upload/daily/opera-gx.png"
+    },
+    {
+      "category": "daily",
+      "name": "Proton VPN",
+      "id": "proton-vpn",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "protonvpn",
+      "svg": "logos/official/proton-vpn.svg",
+      "png": "stitch/upload/daily/proton-vpn.png"
+    },
+    {
+      "category": "daily",
+      "name": "Bitwarden",
+      "id": "bitwarden",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "bitwarden",
+      "svg": "logos/official/bitwarden.svg",
+      "png": "stitch/upload/daily/bitwarden.png"
+    },
+    {
+      "category": "daily",
+      "name": "AnyDesk",
+      "id": "anydesk",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "anydesk",
+      "svg": "logos/official/anydesk.svg",
+      "png": "stitch/upload/daily/anydesk.png"
+    },
+    {
+      "category": "daily",
+      "name": "RustDesk",
+      "id": "rustdesk",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "rustdesk",
+      "svg": "logos/official/rustdesk.svg",
+      "png": "stitch/upload/daily/rustdesk.png"
+    },
+    {
+      "category": "daily",
+      "name": "Discord",
+      "id": "discord",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "discord",
+      "svg": "logos/official/discord.svg",
+      "png": "stitch/upload/daily/discord.png"
+    },
+    {
+      "category": "daily",
+      "name": "Slack",
+      "id": "slack",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "slack",
+      "svg": "logos/official/slack.svg",
+      "png": "stitch/upload/daily/slack.png"
+    },
+    {
+      "category": "daily",
+      "name": "Telegram",
+      "id": "telegram",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "telegram",
+      "svg": "logos/official/telegram.svg",
+      "png": "stitch/upload/daily/telegram.png"
+    },
+    {
+      "category": "daily",
+      "name": "OBS",
+      "id": "obs",
+      "kind": "official",
+      "source": "simple-icons",
+      "simple_icons_slug": "obsstudio",
+      "svg": "logos/official/obs.svg",
+      "png": "stitch/upload/daily/obs.png"
+    }
+  ]
+}
