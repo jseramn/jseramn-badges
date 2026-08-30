@@ -15,8 +15,8 @@ from build_assets import CATALOG
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "svg"
-PNG = ROOT / "dist" / "lg"
-RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/lg"
+PNG = ROOT / "dist" / "ico"
+RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/ico"
 H = 40
 
 HREF = {
@@ -158,23 +158,23 @@ def grain_layer(width: int, height: int, seed: str) -> str:
 
 def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
     text_w = measure(name)
-    well = 24 if len(icons) == 2 else 20
+    well = 28 if len(icons) == 2 else 24
     pad_l, gap, pad_r = 10, 9, 13
     width = pad_l + well + gap + text_w + pad_r
     cy = H / 2
     marks: list[str] = []
     if icons:
         if len(icons) == 1:
-            marks.append(icon_group(icons[0], pad_l + (well - 16) / 2, cy - 8, 16))
+            marks.append(icon_group(icons[0], pad_l + (well - 20) / 2, cy - 10, 20))
         else:
-            marks.append(icon_group(icons[0], pad_l, cy - 6, 12))
-            marks.append(icon_group(icons[1], pad_l + 14, cy - 6, 12))
+            marks.append(icon_group(icons[0], pad_l, cy - 7, 14))
+            marks.append(icon_group(icons[1], pad_l + 16, cy - 7, 14))
     else:
         marks.append(
-            f'<rect x="{pad_l}" y="{cy - 9}" width="18" height="18" fill="#0a0a0c"/>'
-            f'<text x="{pad_l + 9:.1f}" y="{cy + 3.2:.1f}" text-anchor="middle" '
+            f'<rect x="{pad_l}" y="{cy - 11}" width="22" height="22" fill="#0a0a0c"/>'
+            f'<text x="{pad_l + 11:.1f}" y="{cy + 3.6:.1f}" text-anchor="middle" '
             f'font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
-            f'font-size="9" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
+            f'font-size="10" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
         )
     label_x = pad_l + well + gap
     w2 = width * 0.42

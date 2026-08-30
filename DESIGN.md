@@ -156,7 +156,7 @@ Composition borrowed from the reference:
 
 1. Base `#000000`. Cards `#0a0a0a`.
 2. Badge face is a **flat** `#141416` square. No left plane. One right wedge at `#3a3a42` / 0.12. A diagonal base gradient reads as glass — do not use one.
-3. Grain is baked 1×1 specks in muted gray, not white stars. The profile ships `dist/lg/*.png`, left-aligned, 40px tall.
+3. Grain is baked 1×1 specks in muted gray, not white stars. The profile ships `dist/ico/*.png`, left-aligned, 40px tall.
 4. **No stroke. No hairline. No drop shadow. No filter. No lift.** The outer shape is a 0-radius rectangle and nothing else.
 
 ## Shapes
@@ -173,9 +173,9 @@ Hard rectangle. Square corners. Flat and sharp.
 ### Badges (core)
 
 - Height **40px**, width hugs the label. Never clip. Never a huge empty tail.
-- Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/lg/*.png`, left-aligned.
+- Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/ico/*.png`, left-aligned.
 - **No stroke.** Radius **0**. No shadow. The square is the clip, not a box drawn around the face.
-- Mark sits on the face, optically centered. Official glyphs 14×14 `#cfcfcf`. Monograms sit on a 16×16 filled square with **no outline**, so `AI` never reads as part of `Aider`.
+- Mark sits on the face, optically centered. Official glyphs **20×20** `#cfcfcf`. Monograms sit on a 22×22 filled square with **no outline**, so `AI` never reads as part of `Aider`.
 - Label starts 8px after the well. Geist 12 / 600, `#f2f2f2`. Vertical center shared with the mark (`dominant-baseline: central`, y = 14).
 - AnyDesk and RustDesk remain one chip
 
@@ -185,7 +185,7 @@ Match the floating documents in the reference: black rectangle, monospace JSON, 
 
 ### Placeholder monograms
 
-16×16 square well (0 radius), 2-letter Geist Mono 8/600, `#f2f2f2` on `#0a0a0c`, hairline `#3a3a40`. Never sit the letters as loose text next to the label.
+22×22 square well (0 radius), 2-letter Geist Mono 10/600, `#f2f2f2` on `#0a0a0c`. Never sit the letters as loose text next to the label.
 
 ### Inputs / buttons
 

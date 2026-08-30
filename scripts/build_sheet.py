@@ -142,8 +142,8 @@ def main() -> None:
     background-blend-mode: overlay, normal;
   }}
   .well {{
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
