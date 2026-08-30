@@ -15,8 +15,8 @@ from build_assets import CATALOG
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "svg"
-PNG = ROOT / "dist" / "png"
-RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/png"
+PNG = ROOT / "dist" / "matte"
+RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/matte"
 H = 32
 
 HREF = {
@@ -141,15 +141,15 @@ def icon_group(path: Path, x: float, y: float, size: float = 14) -> str:
 
 def grain_layer(width: int, height: int, seed: str) -> str:
     rng = random.Random(seed)
-    count = max(160, width * height // 3)
+    count = max(120, width * height // 4)
     parts: list[str] = []
     for _ in range(count):
         x = rng.randrange(width)
         y = rng.randrange(height)
-        if rng.random() < 0.55:
-            fill, op = "#d0d0d6", 0.08 + rng.random() * 0.22
+        if rng.random() < 0.4:
+            fill, op = "#6a6a70", 0.06 + rng.random() * 0.10
         else:
-            fill, op = "#000000", 0.10 + rng.random() * 0.28
+            fill, op = "#000000", 0.10 + rng.random() * 0.22
         parts.append(
             f'<rect x="{x}" y="{y}" width="1" height="1" fill="{fill}" opacity="{op:.2f}"/>'
         )
@@ -177,24 +177,16 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
             f'font-size="8" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
         )
     label_x = pad_l + well + gap
-    w2 = width * 0.38
+    w2 = width * 0.42
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{H}" '
         f'viewBox="0 0 {width} {H}" role="img" aria-label="{html.escape(name)}">'
         f"<defs>"
-        f'<linearGradient id="base" x1="0" y1="1" x2="1" y2="0">'
-        f'<stop offset="0" stop-color="#050506"/>'
-        f'<stop offset="1" stop-color="#1a1a1e"/>'
-        f"</linearGradient>"
-        f'<linearGradient id="p2" x1="1" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="#6e6e76"/>'
-        f'<stop offset="1" stop-color="#0c0c0e"/>'
-        f"</linearGradient>"
         f'<clipPath id="face"><rect x="0" y="0" width="{width}" height="{H}"/></clipPath>'
         f"</defs>"
         f'<g clip-path="url(#face)">'
-        f'<rect x="0" y="0" width="{width}" height="{H}" fill="url(#base)"/>'
-        f'<polygon points="{w2:.1f},{H} {width},{H} {width},0" fill="url(#p2)" opacity="0.2"/>'
+        f'<rect x="0" y="0" width="{width}" height="{H}" fill="#141416"/>'
+        f'<polygon points="{w2:.1f},{H} {width},{H} {width},0" fill="#3a3a42" opacity="0.12"/>'
         f"{grain_layer(width, H, name)}"
         f"</g>"
         + "".join(marks)
@@ -242,7 +234,7 @@ def main() -> None:
                 ]
                 write_badge(label, "AR", [i for i in icons if i.exists()], dest)
                 href = HREF[label]
-                src = f"{RAW}/anydesk-rustdesk.png?v=6"
+                src = f"{RAW}/anydesk-rustdesk.png"
                 lines.append(
                     f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(label)}" /></a>'
                 )
@@ -251,7 +243,7 @@ def main() -> None:
             icon = official_path(name)
             write_badge(name, letters, [icon] if icon else [], dest)
             href = HREF.get(name, "https://github.com/jseramn")
-            src = f"{RAW}/{file_id(name)}.png?v=6"
+            src = f"{RAW}/{file_id(name)}.png"
             lines.append(
                 f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(name)}" /></a>'
             )

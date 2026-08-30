@@ -155,8 +155,8 @@ Composition borrowed from the reference:
 ## Elevation & Depth
 
 1. Base `#000000`. Cards `#0a0a0a`.
-2. Badge face is a dark base wash plus **one** right-side platinum wedge at 0.2 opacity (half of the first plane pass). No left reflection. Depth is the join of those planes, not a frame.
-3. Grain is **baked 1×1 specks**. The profile ships `dist/png/*.png`.
+2. Badge face is a **flat** `#141416` square. No left plane. One right wedge at `#3a3a42` / 0.12. A diagonal base gradient reads as glass — do not use one.
+3. Grain is baked 1×1 specks in muted gray, not white stars. The profile ships `dist/matte/*.png` (new path so GitHub Camo cannot reuse the glossy files).
 4. **No stroke. No hairline. No drop shadow. No filter. No lift.** The outer shape is a 0-radius rectangle and nothing else.
 
 ## Shapes
@@ -173,7 +173,7 @@ Hard rectangle. Square corners. Flat and sharp.
 ### Badges (core)
 
 - Height **32px**, width hugs the label. Never clip. Never a huge empty tail.
-- Fill: noir base + grain + a single right wedge at 20% opacity. No left glare. Profile README uses `dist/png/*.png`.
+- Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/matte/*.png`.
 - **No stroke.** Radius **0**. No shadow. The square is the clip, not a box drawn around the face.
 - Mark sits on the face, optically centered. Official glyphs 14×14 `#cfcfcf`. Monograms sit on a 16×16 filled square with **no outline**, so `AI` never reads as part of `Aider`.
 - Label starts 8px after the well. Geist 12 / 600, `#f2f2f2`. Vertical center shared with the mark (`dominant-baseline: central`, y = 14).
