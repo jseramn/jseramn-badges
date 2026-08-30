@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Developer Badge Matrix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&amp;family=Geist+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;600&amp;family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {background: "#131313", "surface-elevated": "#161b22", "border-slate": "#30363d", "primary-container": "#d4d4d4", "caption-gray": "#8b949e", "on-primary": "#1a1c1c", "inverse-surface": "#e2e2e2", "surface-container-low": "#1b1b1b", "inverse-on-surface": "#303030", "on-surface": "#e2e2e2", "on-primary-fixed": "#ffffff", "ink-warm": "#e8e4d9", "on-tertiary-fixed": "#ffffff", "tertiary-container": "#909191", "surface-tint": "#c6c6c7", "on-secondary-container": "#e3e2e2", outline: "#919191", error: "#ffb4ab", "surface-bright": "#393939", "on-tertiary-fixed-variant": "#e2e2e2", "surface-dim": "#131313", "canvas-black": "#000000", "surface-variant": "#353535", surface: "#131313", "primary-fixed": "#5d5f5f", primary: "#ffffff", "surface-container-lowest": "#0e0e0e", "tertiary-fixed-dim": "#454747", "secondary-fixed": "#c7c6c6", "on-background": "#e2e2e2", warning: "#d29922", "accent-pink": "#ff2a9e", "on-secondary-fixed": "#1a1c1c", "vesper-deep": "#0a0b12", "outline-variant": "#474747", "surface-container-highest": "#353535", "inverse-primary": "#5d5f5f", secondary: "#c7c6c6", "on-secondary-fixed-variant": "#3a3c3c", "on-primary-fixed-variant": "#e2e2e2", "error-container": "#93000a", "on-error-container": "#ffdad6", "tertiary-fixed": "#5d5e5f", tertiary: "#e2e2e2", success: "#3fb950", "on-tertiary-container": "#000000", "secondary-container": "#464747", "on-surface-variant": "#c6c6c6", "on-tertiary": "#1a1c1c", "on-primary-container": "#000000", "secondary-fixed-dim": "#ababab", "primary-fixed-dim": "#454747", "surface-container": "#1f1f1f", "on-error": "#690005", "surface-container-high": "#2a2a2a", "accent-purple": "#b026ff", "on-secondary": "#1a1c1c"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"gutter-md": "24px", "caption-gap": "6px", "row-gap": "20px", "container-max": "1000px", "badge-gap": "8px", "gutter-sm": "16px", unit: "4px"}, fontFamily: {"monogram-lg": ["Geist Mono"], "heading-section": ["Geist Mono"], "display-hero": ["Geist"], "terminal-body": ["Geist Mono"], "badge-label": ["Geist"], "caption-category": ["Geist Mono"]}, fontSize: {"monogram-lg": ["28px", {lineHeight: "28px", fontWeight: "600"}], "heading-section": ["16px", {lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600"}], "display-hero": ["30px", {lineHeight: "36px", letterSpacing: "-0.025em", fontWeight: "600"}], "terminal-body": ["14px", {lineHeight: "22px", letterSpacing: "0em", fontWeight: "400"}], "badge-label": ["12px", {lineHeight: "16px", letterSpacing: "0em", fontWeight: "600"}], "caption-category": ["11px", {lineHeight: "16px", letterSpacing: "0.025em", fontWeight: "400"}]}}}};</script>
+<style>
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            height: 28px;
+            padding-left: 8px;
+            padding-right: 10px;
+            border-radius: 2px;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            gap: 6px;
+        }
+        .badge-text {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: #c9d1d9;
+            line-height: 1;
+        }
+        .badge-icon {
+            font-family: 'Material Symbols Outlined';
+            font-size: 14px;
+            color: #c9d1d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .badge-monogram {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            color: #c9d1d9;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 14px;
+            height: 14px;
+        }
+        
+        /* Monogram SVG placeholder styling */
+        .svg-icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            color: #c9d1d9;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen text-on-surface antialiased p-8 flex justify-center items-start">
+<div class="w-full max-w-container-max flex flex-col gap-row-gap">
+<!-- Section 1: languages -->
+<div class="flex flex-col gap-caption-gap w-full">
+<h2 class="font-caption-category text-caption-category text-caption-gray">languages</h2>
+<div class="flex flex-wrap gap-badge-gap">
+<div class="badge">
+<span class="badge-monogram">TS</span>
+<span class="badge-text">TypeScript</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">JS</span>
+<span class="badge-text">JavaScript</span>
+</div>
+<div class="badge">
+<span class="badge-icon">code</span>
+<span class="badge-text">Python</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">GO</span>
+<span class="badge-text">Go</span>
+</div>
+<div class="badge">
+<span class="badge-icon">settings</span>
+<span class="badge-text">Rust</span>
+</div>
+<div class="badge">
+<span class="badge-icon">html</span>
+<span class="badge-text">HTML</span>
+</div>
+<div class="badge">
+<span class="badge-icon">css</span>
+<span class="badge-text">CSS</span>
+</div>
+<div class="badge">
+<span class="badge-icon">terminal</span>
+<span class="badge-text">Bash</span>
+</div>
+</div>
+</div>
+<!-- Section 2: stack -->
+<div class="flex flex-col gap-caption-gap w-full">
+<h2 class="font-caption-category text-caption-category text-caption-gray">stack</h2>
+<div class="flex flex-wrap gap-badge-gap">
+<div class="badge">
+<span class="badge-monogram">RE</span>
+<span class="badge-text">React</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">NX</span>
+<span class="badge-text">Next.js</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">AS</span>
+<span class="badge-text">Astro</span>
+</div>
+<div class="badge">
+<span class="badge-icon">water_drop</span>
+<span class="badge-text">Tailwind</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">3D</span>
+<span class="badge-text">Three.js</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">NO</span>
+<span class="badge-text">Node.js</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">BU</span>
+<span class="badge-text">Bun</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">PN</span>
+<span class="badge-text">pnpm</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">NP</span>
+<span class="badge-text">npm</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">YA</span>
+<span class="badge-text">Yarn</span>
+</div>
+<div class="badge">
+<span class="badge-icon">flash_on</span>
+<span class="badge-text">Vite</span>
+</div>
+<div class="badge">
+<span class="badge-icon">database</span>
+<span class="badge-text">Postgres</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">RD</span>
+<span class="badge-text">Redis</span>
+</div>
+<div class="badge">
+<span class="badge-icon">directions_boat</span>
+<span class="badge-text">Docker</span>
+</div>
+<div class="badge">
+<span class="badge-icon">change_history</span>
+<span class="badge-text">Vercel</span>
+</div>
+<div class="badge">
+<span class="badge-icon">cloud</span>
+<span class="badge-text">Cloudflare</span>
+</div>
+<div class="badge">
+<span class="badge-icon">terminal</span>
+<span class="badge-text">Linux</span>
+</div>
+<div class="badge">
+<span class="badge-icon">account_tree</span>
+<span class="badge-text">Git</span>
+</div>
+<div class="badge">
+<span class="badge-icon">code</span>
+<span class="badge-text">GitHub</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">VI</span>
+<span class="badge-text">Vim</span>
+</div>
+</div>
+</div>
+<!-- Section 3: harnesses -->
+<div class="flex flex-col gap-caption-gap w-full">
+<h2 class="font-caption-category text-caption-category text-caption-gray">harnesses</h2>
+<div class="flex flex-wrap gap-badge-gap">
+<div class="badge">
+<span class="badge-icon">smart_toy</span>
+<span class="badge-text">Cursor</span>
+</div>
+<div class="badge">
+<span class="badge-icon">smart_toy</span>
+<span class="badge-text">Cursor Agent</span>
+</div>
+<div class="badge">
+<span class="badge-icon">chat</span>
+<span class="badge-text">Claude Code</span>
+</div>
+<div class="badge">
+<span class="badge-icon">code_blocks</span>
+<span class="badge-text">OpenCode</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">CL</span>
+<span class="badge-text">Cline</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">AI</span>
+<span class="badge-text">Aider</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">GO</span>
+<span class="badge-text">Goose</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">CR</span>
+<span class="badge-text">Crush</span>
+</div>
+<div class="badge">
+<span class="badge-icon">search</span>
+<span class="badge-text">Grok</span>
+</div>
+<div class="badge">
+<span class="badge-icon">build</span>
+<span class="badge-text">Grok Build</span>
+</div>
+<div class="badge">
+<span class="badge-icon">smart_toy</span>
+<span class="badge-text">Grok Bot</span>
+</div>
+<div class="badge">
+<span class="badge-icon">chat</span>
+<span class="badge-text">ChatGPT</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">QC</span>
+<span class="badge-text">Qwen Code</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">PI</span>
+<span class="badge-text">Pi</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">HE</span>
+<span class="badge-text">Hermes</span>
+</div>
+<div class="badge">
+<span class="badge-icon">pan_tool</span>
+<span class="badge-text">OpenHands</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">OC</span>
+<span class="badge-text">OpenClaw</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">MC</span>
+<span class="badge-text">Mastra Code</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">MF</span>
+<span class="badge-text">MiroFish</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">DC</span>
+<span class="badge-text">dcode</span>
+</div>
+</div>
+</div>
+<!-- Section 4: workshop -->
+<div class="flex flex-col gap-caption-gap w-full">
+<h2 class="font-caption-category text-caption-category text-caption-gray">workshop</h2>
+<div class="flex flex-wrap gap-badge-gap">
+<div class="badge">
+<span class="badge-monogram">EN</span>
+<span class="badge-text">Engram</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">SC</span>
+<span class="badge-text">Scryer</span>
+</div>
+<div class="badge">
+<span class="badge-icon">share</span>
+<span class="badge-text">CodeGraph</span>
+</div>
+<div class="badge">
+<span class="badge-icon">psychology</span>
+<span class="badge-text">Gentle AI</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">CU</span>
+<span class="badge-text">CUA</span>
+</div>
+<div class="badge">
+<span class="badge-monogram">UV</span>
+<span class="badge-text">uv</span>
+</div>
+<div class="badge">
+<span class="badge-icon">movie</span>
+<span class="badge-text">FFmpeg</span>
+</div>
+<div class="badge">
+<span class="badge-icon">lock</span>
+<span class="badge-text">Doppler</span>
+</div>
+<div class="badge">
+<span class="badge-icon">smartphone</span>
+<span class="badge-text">scrcpy</span>
+</div>
+</div>
+</div>
+<!-- Section 5: daily -->
+<div class="flex flex-col gap-caption-gap w-full">
+<h2 class="font-caption-category text-caption-category text-caption-gray">daily</h2>
+<div class="flex flex-wrap gap-badge-gap">
+<div class="badge">
+<span class="badge-icon">edit_note</span>
+<span class="badge-text">Obsidian</span>
+</div>
+<div class="badge">
+<span class="badge-icon">terminal</span>
+<span class="badge-text">Kitty</span>
+</div>
+<div class="badge">
+<span class="badge-icon">public</span>
+<span class="badge-text">Brave</span>
+</div>
+<div class="badge">
+<span class="badge-icon">public</span>
+<span class="badge-text">Chrome</span>
+</div>
+<div class="badge">
+<span class="badge-icon">public</span>
+<span class="badge-text">Opera GX</span>
+</div>
+<div class="badge">
+<span class="badge-icon">vpn_key</span>
+<span class="badge-text">Proton VPN</span>
+</div>
+<div class="badge">
+<span class="badge-icon">shield</span>
+<span class="badge-text">Bitwarden</span>
+</div>
+<div class="badge">
+<span class="badge-icon">desktop_windows</span>
+<span class="badge-text">AnyDesk · RustDesk</span>
+</div>
+<div class="badge">
+<span class="badge-icon">forum</span>
+<span class="badge-text">Discord</span>
+</div>
+<div class="badge">
+<span class="badge-icon">tag</span>
+<span class="badge-text">Slack</span>
+</div>
+<div class="badge">
+<span class="badge-icon">send</span>
+<span class="badge-text">Telegram</span>
+</div>
+<div class="badge">
+<span class="badge-icon">videocam</span>
+<span class="badge-text">OBS</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

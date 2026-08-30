@@ -1,0 +1,182 @@
+---
+name: Obsidian Noir
+colors:
+  surface: '#131313'
+  surface-dim: '#131313'
+  surface-bright: '#393939'
+  surface-container-lowest: '#0e0e0e'
+  surface-container-low: '#1b1b1b'
+  surface-container: '#1f1f1f'
+  surface-container-high: '#2a2a2a'
+  surface-container-highest: '#353535'
+  on-surface: '#e2e2e2'
+  on-surface-variant: '#c6c6c6'
+  inverse-surface: '#e2e2e2'
+  inverse-on-surface: '#303030'
+  outline: '#919191'
+  outline-variant: '#474747'
+  surface-tint: '#c6c6c7'
+  primary: '#ffffff'
+  on-primary: '#1a1c1c'
+  primary-container: '#d4d4d4'
+  on-primary-container: '#000000'
+  inverse-primary: '#5d5f5f'
+  secondary: '#c7c6c6'
+  on-secondary: '#1a1c1c'
+  secondary-container: '#464747'
+  on-secondary-container: '#e3e2e2'
+  tertiary: '#e2e2e2'
+  on-tertiary: '#1a1c1c'
+  tertiary-container: '#909191'
+  on-tertiary-container: '#000000'
+  error: '#ffb4ab'
+  on-error: '#690005'
+  error-container: '#93000a'
+  on-error-container: '#ffdad6'
+  primary-fixed: '#5d5f5f'
+  primary-fixed-dim: '#454747'
+  on-primary-fixed: '#ffffff'
+  on-primary-fixed-variant: '#e2e2e2'
+  secondary-fixed: '#c7c6c6'
+  secondary-fixed-dim: '#ababab'
+  on-secondary-fixed: '#1a1c1c'
+  on-secondary-fixed-variant: '#3a3c3c'
+  tertiary-fixed: '#5d5e5f'
+  tertiary-fixed-dim: '#454747'
+  on-tertiary-fixed: '#ffffff'
+  on-tertiary-fixed-variant: '#e2e2e2'
+  background: '#131313'
+  on-background: '#e2e2e2'
+  surface-variant: '#353535'
+typography:
+  display-hero:
+    fontFamily: Geist
+    fontSize: 30px
+    fontWeight: '600'
+    lineHeight: 36px
+    letterSpacing: -0.025em
+  heading-section:
+    fontFamily: Geist Mono
+    fontSize: 16px
+    fontWeight: '600'
+    lineHeight: 24px
+    letterSpacing: -0.01em
+  terminal-body:
+    fontFamily: Geist Mono
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 22px
+    letterSpacing: 0em
+  badge-label:
+    fontFamily: Geist
+    fontSize: 12px
+    fontWeight: '600'
+    lineHeight: 16px
+    letterSpacing: 0em
+  caption-category:
+    fontFamily: Geist Mono
+    fontSize: 11px
+    fontWeight: '400'
+    lineHeight: 16px
+    letterSpacing: 0.025em
+  monogram-lg:
+    fontFamily: Geist Mono
+    fontSize: 28px
+    fontWeight: '600'
+    lineHeight: 28px
+rounded:
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
+  full: 9999px
+spacing:
+  unit: 4px
+  badge-gap: 8px
+  row-gap: 20px
+  caption-gap: 6px
+  container-max: 1000px
+  gutter-md: 24px
+  gutter-sm: 16px
+---
+
+## Brand & Style
+
+The attached reference (`noir-reference.jpeg`) is the lock. Tone is `NOIR`: pitch black, grain, dither, overlapping terminal cards, organic smoke on one side and hard architecture on the other. No cyan. No pink. No purple. No brand rainbow.
+
+Personality is calculated and developer-first. Information is silver on black. Structure is hairline rectangles stacked like JSON documents. Texture is stipple, not gradient. If a color is not black, white, or gray, it is wrong.
+
+## Colors
+
+Canvas is `#000000`. Elevated panels are `#0a0a0a` / `#111111`. Type and glyphs are `#f2f2f2` or `#cfcfcf`. Borders are `#2e2e2e` hairlines — the same thin white/gray edges on the floating cards in the reference.
+
+- **Primary:** paper white. Active text, icons, JSON keys.
+- **Secondary:** mid gray. Captions, metadata, deactivated.
+- **Tertiary:** lighter silver used only as a highlight edge, never as a neon fill.
+- **Error / success / warning:** grayscale only. Status is weight and contrast, not hue.
+
+Do not introduce Electric Cyan, Neon Pink, or any chromatic accent. The reference image has none.
+
+## Typography
+
+Dual stack, same as before:
+
+- **Geist:** badge labels and UI words.
+- **Geist Mono:** captions, JSON, section ids, monograms.
+
+Rules:
+1. Category captions stay lowercase Geist Mono (`languages`, `stack`).
+2. Code / JSON on cards is Geist Mono 14, weight 400, high contrast white on `#0a0a0a`.
+3. When unsure, use Mono.
+
+## Layout & Spacing
+
+1000px max, left-aligned badge matrix, 20px between categories, 6px from caption to row. Badges wrap; they do not shrink.
+
+Composition borrowed from the reference:
+- Content lives on stacked soft-square cards, slightly overlapping, never a marketing hero.
+- Depth is layering and hairlines, not drop shadows.
+- Optional atmosphere (grain, smoke, circuit traces) stays in the background only. It must not invade the badge row.
+
+## Elevation & Depth
+
+1. Base `#000000`. Cards `#0a0a0a`. Badges `#111111`.
+2. 1px hairline `#2e2e2e`. No drop shadow on badges.
+3. Overlays may use a 12px blur and a 0.5px `rgba(245,245,245,0.2)` edge — glass as a dark pane, not a rainbow.
+4. No CRT glow. No colored outer glow.
+
+## Shapes
+
+Soft-square. Not 0px. Not a pill.
+
+- Badges: 4px
+- Cards / JSON panels: 8px
+- Overlay panes: 12px
+- Pills only for a real action control, never for a tech badge
+
+## Components
+
+### Badges (core)
+
+- Height 28px, width hugs text
+- Fill `#111111`, stroke 1px `#2e2e2e`
+- Icon 16×16 in an 18px well, color `#cfcfcf`
+- Label Geist 12 / 600, `#f2f2f2`
+- AnyDesk and RustDesk remain one chip
+
+### JSON / terminal cards
+
+Match the floating documents in the reference: black rectangle, monospace JSON, dog-ear optional, stacked offset. Use only for atmosphere or a single identity card — not behind every badge.
+
+### Placeholder monograms
+
+Square well, 2-letter Geist Mono, `#f2f2f2` on `#1a1a1a`.
+
+### Inputs / buttons
+
+Black field, hairline border. Focus = brighter hairline (`#f2f2f2`), no cyan ring. Buttons are ghost + mono label.
+
+## Hard fail
+
+White iOS pills. Brand-colored logos. Cyan/pink glow. A title like "Refined Languages Badges Row". Extra tools. Invented mascots. A landing-page hero that ignores the badge matrix.

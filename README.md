@@ -22,13 +22,16 @@ If Stitch drops images, re-open the project and paste the sheet with Ctrl+V.
 ## Layout
 
 ```
+dist/badges.html      self-contained sheet (no Material ligatures)
+dist/badges.png       rendered sheet used on the GitHub profile
 logos/official/       Simple Icons, recolored #c9d1d9
 logos/placeholder/    original monograms (no official mark)
 stitch/PROMPT.md      copy-paste prompt
 stitch/contact/       one PNG sheet per category + profile card
-stitch/upload/        256×256 PNG per item, if a pass needs singles
+stitch/exports/       broken Stitch HTML (icon names leaked as text)
 catalog.json          machine index
 scripts/build_assets.py
+scripts/build_sheet.py
 ```
 
 Rebuild the pack:
