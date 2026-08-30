@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import html
+import random
 import re
 import subprocess
 import sys
@@ -14,7 +15,9 @@ from build_assets import CATALOG
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "svg"
-RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/svg"
+PNG = ROOT / "dist" / "png"
+RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/png"
+H = 32
 
 HREF = {
     "TypeScript": "https://www.typescriptlang.org",
@@ -136,12 +139,29 @@ def icon_group(path: Path, x: float, y: float, size: float = 14) -> str:
     )
 
 
+def grain_layer(width: int, height: int, seed: str) -> str:
+    rng = random.Random(seed)
+    count = max(80, width * height // 5)
+    parts: list[str] = []
+    for _ in range(count):
+        x = rng.randrange(width)
+        y = rng.randrange(height)
+        if rng.random() < 0.52:
+            fill, op = "#c8c8d2", 0.16 + rng.random() * 0.32
+        else:
+            fill, op = "#000000", 0.20 + rng.random() * 0.36
+        parts.append(
+            f'<rect x="{x}" y="{y}" width="1" height="1" fill="{fill}" opacity="{op:.2f}"/>'
+        )
+    return "".join(parts)
+
+
 def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
     text_w = measure(name)
     well = 22 if len(icons) == 2 else 18
-    pad_l, gap, pad_r = 7, 8, 10
+    pad_l, gap, pad_r = 8, 8, 11
     width = pad_l + well + gap + text_w + pad_r
-    cy = 14.0
+    cy = H / 2
     marks: list[str] = []
     if icons:
         if len(icons) == 1:
@@ -158,30 +178,23 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
             f'font-size="8" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
         )
     label_x = pad_l + well + gap
+    clip = "face"
     svg = (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="28" '
-        f'viewBox="0 0 {width} 28" role="img" aria-label="{html.escape(name)}">'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{H}" '
+        f'viewBox="0 0 {width} {H}" role="img" aria-label="{html.escape(name)}">'
         f"<defs>"
         f'<linearGradient id="pt" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="#5a5a64"/>'
-        f'<stop offset="0.18" stop-color="#2a2a32"/>'
-        f'<stop offset="0.55" stop-color="#1e1e24"/>'
-        f'<stop offset="1" stop-color="#08080a"/>'
+        f'<stop offset="0" stop-color="#2a2a32"/>'
+        f'<stop offset="1" stop-color="#121216"/>'
         f"</linearGradient>"
-        f'<filter id="gn" x="0" y="0" width="1" height="1" '
-        f'filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" '
-        f'color-interpolation-filters="sRGB">'
-        f'<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" '
-        f'seed="4" stitchTiles="stitch" result="n"/>'
-        f'<feColorMatrix type="matrix" values="0 0 0 0 0.78  0 0 0 0 0.78  '
-        f'0 0 0 0 0.82  0 0 0 0.45 0" in="n" result="g"/>'
-        f'<feBlend in="SourceGraphic" in2="g" mode="overlay"/>'
-        f"</filter>"
+        f'<clipPath id="{clip}"><rect x="0" y="0" width="{width}" height="{H}"/></clipPath>'
         f"</defs>"
-        f'<rect x="0" y="0" width="{width}" height="28" '
-        f'shape-rendering="crispEdges" fill="url(#pt)" filter="url(#gn)"/>'
-        f'<rect x="0.5" y="0.5" width="{width - 1}" height="27" '
-        f'fill="none" stroke="#4a4a50" shape-rendering="crispEdges"/>'
+        f'<g clip-path="url(#{clip})" shape-rendering="crispEdges">'
+        f'<rect x="0" y="0" width="{width}" height="{H}" fill="url(#pt)"/>'
+        f"{grain_layer(width, H, name)}"
+        f"</g>"
+        f'<rect x="0.5" y="0.5" width="{width - 1}" height="{H - 1}" '
+        f'fill="none" stroke="#6a6a72" shape-rendering="crispEdges"/>'
         + "".join(marks)
         + f'<text x="{label_x}" y="{cy + 4.2:.1f}" '
         f'font-family="system-ui, -apple-system, Segoe UI, sans-serif" '
@@ -189,6 +202,9 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
         f"</svg>\n"
     )
     dest.write_text(svg, encoding="utf-8")
+    PNG.mkdir(parents=True, exist_ok=True)
+    png = PNG / dest.with_suffix(".png").name
+    subprocess.run(["rsvg-convert", "-z", "2", str(dest), "-o", str(png)], check=True)
     return width
 
 
@@ -224,18 +240,18 @@ def main() -> None:
                 ]
                 write_badge(label, "AR", [i for i in icons if i.exists()], dest)
                 href = HREF[label]
-                src = f"{RAW}/anydesk-rustdesk.svg?v=3"
+                src = f"{RAW}/anydesk-rustdesk.png"
                 lines.append(
-                    f'  <a href="{href}"><img src="{src}" height="28" alt="{html.escape(label)}" /></a>'
+                    f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(label)}" /></a>'
                 )
                 continue
             dest = OUT / f"{file_id(name)}.svg"
             icon = official_path(name)
             write_badge(name, letters, [icon] if icon else [], dest)
             href = HREF.get(name, "https://github.com/jseramn")
-            src = f"{RAW}/{file_id(name)}.svg?v=3"
+            src = f"{RAW}/{file_id(name)}.png"
             lines.append(
-                f'  <a href="{href}"><img src="{src}" height="28" alt="{html.escape(name)}" /></a>'
+                f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(name)}" /></a>'
             )
         lines.append("</p>")
         lines.append("")

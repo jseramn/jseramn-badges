@@ -130,7 +130,7 @@ def main() -> None:
   .badge {{
     display: inline-flex;
     align-items: center;
-    height: 28px;
+    height: 32px;
     padding: 0 10px 0 7px;
     gap: 8px;
     border: 1px solid var(--stroke);

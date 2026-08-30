@@ -54,9 +54,9 @@ colors:
   border-hairline: '#4a4a50'
   paper-white: '#f5f5f5'
   grain-mid: '#6e6e6e'
-  platinum-top: '#5a5a64'
-  platinum-mid: '#1e1e24'
-  platinum-base: '#08080a'
+  platinum-top: '#2a2a32'
+  platinum-mid: '#1a1a20'
+  platinum-base: '#121216'
   success: '#d0d0d0'
   warning: '#9a9a9a'
 typography:
@@ -155,8 +155,9 @@ Composition borrowed from the reference:
 ## Elevation & Depth
 
 1. Base `#000000`. Cards `#0a0a0a`.
-2. Badges use a vertical platinum noir gradient: `#5a5a64` → `#1e1e24` → `#08080a`, then a clipped grain overlay. This is metal + film grain, not a glow.
-3. 1px hairline `#4a4a50`. **No drop shadow. No lift.** The only allowed filter is grain, and its region is clipped to the rect (`x/y/width/height = 0/0/100%/100%`). Never the default −10% filter box — that reads as a shadow.
+2. Badge face is a low-contrast noir wash `#2a2a32` → `#121216`. High-contrast top-lit metal reads as a raised button — do not use it.
+3. Grain is **baked 1×1 specks** in the SVG, then the profile ships the **raster PNG**. GitHub strips `feTurbulence` and a query-string cache-bust does not change the pixels they already cached.
+4. 1px hairline `#6a6a72` on all four sides. **No drop shadow. No filter. No lift.**
 4. Overlays may use a 12px blur and a 0.5px `rgba(245,245,245,0.2)` edge — glass as a dark pane, not a rainbow.
 5. No CRT glow. No colored outer glow.
 
@@ -173,9 +174,9 @@ Hard rectangle. Square corners. Flat and sharp.
 
 ### Badges (core)
 
-- Height 28px, width hugs the label. Never clip. Never a huge empty tail.
-- Fill: platinum gradient (`platinum-top` → `platinum-base`) plus clipped `feTurbulence` film grain. Not a flat fill. Not a 2×2 mesh.
-- Stroke 1px `#4a4a50`. Radius **0**. No shadow.
+- Height **32px**, width hugs the label. Never clip. Never a huge empty tail.
+- Fill: low-contrast noir wash plus baked 1×1 platinum/black grain. Profile README uses `dist/png/*.png`.
+- Stroke 1px `#6a6a72`. Radius **0**. No shadow.
 - Mark sits in an 18×18 square well, optically centered. Official glyphs 14×14 `#cfcfcf`. Monograms live *inside* a 16×16 square well so `AI` never reads as part of `Aider`.
 - Label starts 8px after the well. Geist 12 / 600, `#f2f2f2`. Vertical center shared with the mark (`dominant-baseline: central`, y = 14).
 - AnyDesk and RustDesk remain one chip
