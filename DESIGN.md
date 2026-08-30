@@ -156,7 +156,7 @@ Composition borrowed from the reference:
 
 1. Base `#000000`. Cards `#0a0a0a`.
 2. Badge face is a **flat** `#141416` square. No left plane. One right wedge at `#3a3a42` / 0.12. A diagonal base gradient reads as glass — do not use one.
-3. Grain is baked 1×1 specks in muted gray, not white stars. The profile ships `dist/h56/*.png`, left-aligned, 56px tall.
+3. Grain is baked 1×1 specks in muted gray, not white stars. The profile ships `dist/h48/*.png`, left-aligned, 48px tall.
 4. **No stroke. No hairline. No drop shadow. No filter. No lift.** The outer shape is a 0-radius rectangle and nothing else.
 
 ## Shapes
@@ -172,11 +172,11 @@ Hard rectangle. Square corners. Flat and sharp.
 
 ### Badges (core)
 
-- Height **56px**, width hugs the label. Never clip. Never a huge empty tail.
-- Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/h56/*.png`, left-aligned.
+- Height **48px**, width hugs the label. Never clip. Never a huge empty tail.
+- Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/h48/*.png`, left-aligned.
 - **No stroke.** Radius **0**. No shadow. The square is the clip, not a box drawn around the face.
-- Mark sits on the face, optically centered. Official glyphs **28×28** `#cfcfcf`. Missing marks use the letter-tile recipe in **Missing marks**.
-- Label Geist 18 / 600, `#f2f2f2`. Category titles sit in their own paragraph so they breathe above the row.
+- Mark sits on the face, optically centered. Official glyphs **24×24** `#cfcfcf`. Missing marks use the letter-tile recipe in **Missing marks**.
+- Label Geist 15 / 600, `#f2f2f2`. Category titles sit in their own paragraph so they breathe above the row.
 - AnyDesk and RustDesk remain one chip
 
 ### JSON / terminal cards
@@ -187,7 +187,7 @@ Match the floating documents in the reference: black rectangle, monospace JSON, 
 
 A chip without a Simple Icons / vendor SVG still ships. Never drop a harness because the logo pack is incomplete. Never invent a mascot, bracket, gear, or sparkle to fake a brand.
 
-The missing mark is a **letter tile**, occupying the same mark slot as an official glyph (30×30 so two letters fit; glyphs stay 28×28):
+The missing mark is a **letter tile**, occupying the same mark slot as an official glyph (26×26 so two letters fit; glyphs stay 24×24):
 
 - Geist Mono, 10/600, `#f2f2f2` on a flat `#0a0a0c` square, radius 0, **no outline**.
 - The tile is an index, not brand art. Do not present it as the vendor's logo.
