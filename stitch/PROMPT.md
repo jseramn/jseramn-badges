@@ -1,45 +1,42 @@
-# Stitch prompt — jseramn profile badges
+# Stitch prompt — paste below the line only
 
-Use this in [stitch.withgoogle.com](https://stitch.withgoogle.com). Switch to **Web**. Attach `stitch/contact/profile-card-reference.png` first, then one category contact sheet.
-
-Paste everything below the line.
+Attach, in this order:
+1. Your screenshot of the live GitHub profile badges (the dark gray Shields chips already on github.com/jseramn)
+2. `live-chips-reference.png` (same chips, clean)
+3. One logo contact sheet (`languages.png` first)
 
 ---
 
-Design a GitHub profile badge system for @jseramn. This is a component sheet, not an app, not a landing page.
+This is a REFINEMENT job, not a design brief.
 
-Visual lock (copy the attached profile card, do not invent a new aesthetic):
-- Background #0d1117
-- Chip fill #161b22
-- Chip stroke 1px #30363d
-- Label #c9d1d9
-- Caption #8b949e
-- Corner radius 4px (GitHub chip, not iOS pill)
-- Font: the same UI sans GitHub uses (system-ui). No display fonts. No gradients. No glow. No colorful squares.
+The first attached image is a screenshot of badges that ALREADY exist on a GitHub profile. Those chips are the source of truth. Your only job: keep every chip identical and insert a 14×14 monochrome logo to the left of the label.
 
-One badge recipe for every item. No exceptions:
-- Height: 28px
-- Left: 16×16 monochrome mark, color #c9d1d9, optically centered in an 18px well
-- 8px gap
-- Label: 12px / 600, #c9d1d9, one line
-- Horizontal padding 10px
-- Do not put a logo on some chips and leave others text-only
-- Do not use brand colors. The attached SVGs/PNGs are already flattened to #c9d1d9 so the set stays one system
-- If a mark is a letter monogram (placeholder), keep that monogram. Do not invent a mascot
+COPY from the screenshot:
+- Dark charcoal fill, almost black (#161b22)
+- Near-white label (#c9d1d9 or the exact gray in the screenshot)
+- Flat rectangle. Tiny corner radius (2px). NOT a pill. NOT white. NOT iOS.
+- One shared height for every chip (match the screenshot, ~20–28px)
+- Width HUGS the text. If the word is "Go", the chip is short. If the word is "TypeScript", the chip grows. Never clip text. Never leave a huge empty tail.
+- Same font on every chip: GitHub / system-ui / -apple-system, 11–12px, semibold. One color.
+- Same padding, same gap between chips, same wrapping as the screenshot
+- Dark page background #0d1117. No dot grid. No Figma chrome. No component titles.
 
-Categories, in this order, each on its own row with a 11px #8b949e caption above the row (`languages`, `stack`, `harnesses`, `workshop`, `daily`):
+ADD only this:
+- A 14×14 glyph on the left, color #c9d1d9, 6px padding from the left edge, 6px gap before the label
+- Use the attached official marks. If a mark is a two-letter monogram, keep the monogram. Do not invent mascots.
 
-languages: TypeScript, JavaScript, Python, Go, Rust, HTML, CSS, Bash
-stack: React, Next.js, Astro, Tailwind, Three.js, Node.js, Bun, pnpm, npm, Yarn, Vite, Postgres, Redis, Docker, Vercel, Cloudflare, Linux, Git, GitHub, Vim
-harnesses: Cursor, Cursor Agent, Claude Code, OpenCode, Cline, Aider, Goose, Crush, Grok, Grok Build, Grok Bot, ChatGPT, Qwen Code, Pi, Hermes, OpenHands, OpenClaw, Mastra Code, MiroFish, dcode
-workshop: Engram, Scryer, CodeGraph, Gentle AI, CUA, uv, FFmpeg, Doppler, scrcpy
-daily: Obsidian, Kitty, Brave, Chrome, Opera GX, Proton VPN, Bitwarden, AnyDesk · RustDesk, Discord, Slack, Telegram, OBS
+HARD FAIL if you output any of these:
+- White or off-white chips
+- Rounded pills
+- Serif or display type
+- Blue or brand-colored labels
+- Text cut off
+- Different heights in the same row
+- Frame labels like "JavaScript Badge" or "Status Badge SVG"
+- A green-dot "Available for Work" chip
+- Shadows, gradients, glass, glow, stickers, 3D
+- A landing page, a hero, a toolbar, or a design-system cover
 
-Special chip: AnyDesk and RustDesk are one badge labeled `AnyDesk · RustDesk`. Put both marks in the 18px well as a tiny pair, or one well with both glyphs. Never two separate chips.
+Do the languages row first, 1000px wide, centered, caption `languages` in 11px #8b949e. Eight chips only: TypeScript, JavaScript, Python, Go, Rust, HTML, CSS, Bash.
 
-Deliverables:
-1. A full sheet showing every row, 1000px wide, so it can sit under the existing ASCII profile card
-2. A second frame: one isolated badge (Cursor) at 4× so the recipe is obvious
-3. Export-ready SVG for each chip later — for now get the sheet consistent
-
-Do not add extra tools. Do not add social stats. Do not add a hero. The ASCII card already exists above this sheet.
+When that row is indistinguishable from the screenshot except for the logos, stop. Do not invent more frames.

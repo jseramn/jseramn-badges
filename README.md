@@ -11,10 +11,10 @@ Shields + Skillicons cannot share one size, one color, or one logo treatment. Ha
 The pack lives on this public repo. Stitch does **not** clone GitHub; it can take a public URL or an attached image.
 
 1. Open [stitch.withgoogle.com](https://stitch.withgoogle.com) and switch to **Web**.
-2. Paste or attach the profile card: `https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/contact/profile-card-reference.png`
-3. Then one contact sheet (`languages.png`, then `stack`, …). Full URL list: [`stitch/SOURCES.md`](stitch/SOURCES.md).
-4. Paste [`stitch/PROMPT.md`](https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/PROMPT.md).
-5. Export the sheet. Drop finished SVG/PNG chips into `dist/` when the first export lands.
+2. Attach your screenshot of the live profile chips, then `live-chips-reference.png`.
+3. Attach only `languages.png` on the first pass.
+4. Paste everything below the `---` in [`stitch/PROMPT.md`](https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/PROMPT.md).
+5. If you get white pills, you used the old prompt — start a new Stitch project.
 
 If Stitch drops images, re-open the project and paste the sheet with Ctrl+V.
 
