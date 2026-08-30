@@ -138,7 +138,7 @@ Dual stack, same as before:
 - **Geist Mono:** captions, JSON, section ids, monograms.
 
 Rules:
-1. Category captions stay lowercase Geist Mono (`languages`, `stack`).
+1. Category captions stay lowercase (`languages`, `stack`). On GitHub they are bold body text — `<sub>` is unreadable.
 2. Code / JSON on cards is Geist Mono 14, weight 400, high contrast white on `#0a0a0a`.
 3. When unsure, use Mono.
 

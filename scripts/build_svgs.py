@@ -221,7 +221,7 @@ def main() -> None:
     ]
     for cat, items in CATALOG.items():
         lines.append(f'<p align="left">')
-        lines.append(f"  <sub>{cat}</sub><br />")
+        lines.append(f"  <b>{cat}</b><br />")
         for name, slug, letters in items:
             if cat == "daily" and name == "RustDesk":
                 continue

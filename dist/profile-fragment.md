@@ -7,7 +7,7 @@
 <br />
 
 <p align="left">
-  <sub>languages</sub><br />
+  <b>languages</b><br />
   <a href="https://www.typescriptlang.org"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/typescript.png" height="40" alt="TypeScript" /></a>
   <a href="https://developer.mozilla.org/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/javascript.png" height="40" alt="JavaScript" /></a>
   <a href="https://www.python.org"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/python.png" height="40" alt="Python" /></a>
@@ -19,7 +19,7 @@
 </p>
 
 <p align="left">
-  <sub>stack</sub><br />
+  <b>stack</b><br />
   <a href="https://react.dev"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/react.png" height="40" alt="React" /></a>
   <a href="https://nextjs.org"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/next-js.png" height="40" alt="Next.js" /></a>
   <a href="https://astro.build"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/astro.png" height="40" alt="Astro" /></a>
@@ -43,7 +43,7 @@
 </p>
 
 <p align="left">
-  <sub>harnesses</sub><br />
+  <b>harnesses</b><br />
   <a href="https://cursor.com"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/cursor.png" height="40" alt="Cursor" /></a>
   <a href="https://cursor.com"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/cursor-agent.png" height="40" alt="Cursor Agent" /></a>
   <a href="https://code.claude.com"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/claude-code.png" height="40" alt="Claude Code" /></a>
@@ -67,7 +67,7 @@
 </p>
 
 <p align="left">
-  <sub>workshop</sub><br />
+  <b>workshop</b><br />
   <a href="https://github.com/Gentleman-Programming/engram"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/engram.png" height="40" alt="Engram" /></a>
   <a href="https://github.com/jseramn/scryer"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/scryer.png" height="40" alt="Scryer" /></a>
   <a href="https://github.com/colbymchenry/codegraph"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/codegraph.png" height="40" alt="CodeGraph" /></a>
@@ -80,7 +80,7 @@
 </p>
 
 <p align="left">
-  <sub>daily</sub><br />
+  <b>daily</b><br />
   <a href="https://obsidian.md"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/obsidian.png" height="40" alt="Obsidian" /></a>
   <a href="https://sw.kovidgoyal.net/kitty"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/kitty.png" height="40" alt="Kitty" /></a>
   <a href="https://brave.com"><img src="https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs/brave.png" height="40" alt="Brave" /></a>
