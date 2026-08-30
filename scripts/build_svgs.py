@@ -15,8 +15,8 @@ from build_assets import CATALOG
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "svg"
-PNG = ROOT / "dist" / "ico"
-RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/ico"
+PNG = ROOT / "dist" / "marks"
+RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/marks"
 H = 40
 
 HREF = {
@@ -64,7 +64,7 @@ HREF = {
     "Pi": "https://pi.dev",
     "Hermes": "https://nousresearch.com",
     "OpenHands": "https://openhands.dev",
-    "OpenClaw": "https://github.com/jseramn",
+    "OpenClaw": "https://openclaw.ai",
     "Mastra Code": "https://mastra.ai",
     "MiroFish": "https://github.com/jseramn",
     "dcode": "https://github.com/jseramn",

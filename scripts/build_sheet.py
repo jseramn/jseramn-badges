@@ -151,22 +151,22 @@ def main() -> None:
     color: var(--mark);
   }}
   .well.pair {{
-    width: 22px;
+    width: 28px;
     gap: 2px;
   }}
   .well.pair .mark {{
-    width: 10px;
-    height: 10px;
-  }}
-  .well .mark, .well svg {{
     width: 14px;
     height: 14px;
+  }}
+  .well .mark, .well svg {{
+    width: 20px;
+    height: 20px;
     display: block;
     fill: #cfcfcf;
   }}
   .well.mono {{
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
     border-radius: 0;
     background: #0a0a0c;
     border: 0;

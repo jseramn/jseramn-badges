@@ -173,7 +173,7 @@ Hard rectangle. Square corners. Flat and sharp.
 ### Badges (core)
 
 - Height **40px**, width hugs the label. Never clip. Never a huge empty tail.
-- Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/ico/*.png`, left-aligned.
+- Fill: flat `#141416` + muted grain + a single right wedge at 12% opacity. No left glare. Profile README uses `dist/marks/*.png`, left-aligned.
 - **No stroke.** Radius **0**. No shadow. The square is the clip, not a box drawn around the face.
 - Mark sits on the face, optically centered. Official glyphs **20×20** `#cfcfcf`. Missing marks use the letter-tile recipe in **Missing marks** — same 20×20 slot, never loose text beside the label.
 - Label starts 8px after the well. Geist 12 / 600, `#f2f2f2`. Vertical center shared with the mark (`dominant-baseline: central`, y = 14).
@@ -187,7 +187,7 @@ Match the floating documents in the reference: black rectangle, monospace JSON, 
 
 A chip without a Simple Icons / vendor SVG still ships. Never drop a harness because the logo pack is incomplete. Never invent a mascot, bracket, gear, or sparkle to fake a brand.
 
-The missing mark is a **letter tile**, occupying the same 20×20 slot as an official glyph:
+The missing mark is a **letter tile**, occupying the same mark slot as an official glyph (22×22 so two letters fit; glyphs stay 20×20):
 
 - Geist Mono, 10/600, `#f2f2f2` on a flat `#0a0a0c` square, radius 0, **no outline**.
 - The tile is an index, not brand art. Do not present it as the vendor's logo.
@@ -199,9 +199,9 @@ Letter recipe (deterministic):
 3. If two tiles on the same sheet would share a pair, take a more distinctive pair from the later name (`CUA` stays `CU` only while `Cursor` already has a glyph).
 4. Never more than two letters. Never sit the letters as loose text next to the label (`AI` must not read as the start of `Aider`).
 
-Graduation: drop an official SVG at `logos/official/{file-id}.svg`, set the catalog slug, rebuild. The tile dies. Do not keep both.
+Graduation: drop an official SVG at `logos/official/{file-id}.svg` and rebuild. File presence wins over a missing Simple Icons slug. The tile dies. Do not keep both.
 
-Simple Icons 404s today (tile until a slug or a vendor SVG exists): Aider, Goose, Crush, Grok, Grok Build, Grok Bot, Pi, Hermes, OpenHands, OpenClaw, Mastra Code, MiroFish, dcode, Engram, Scryer, CodeGraph, Gentle AI, CUA, Doppler, scrcpy, Kitty.
+Tiles remaining (no vendor mark found, or the only asset was a wide wordmark / unrelated favicon): Crush, Hermes, MiroFish, dcode, CodeGraph.
 
 ### Inputs / buttons
 

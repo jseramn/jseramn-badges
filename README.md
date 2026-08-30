@@ -22,10 +22,11 @@ If Stitch drops images, re-open the project and paste the sheet with Ctrl+V.
 ## Layout
 
 ```
-dist/svg/*.svg        one badge per file — these are what the profile links
+dist/svg/*.svg        one badge per file
+dist/marks/*.png      profile README glyphs (Camo path)
 dist/profile-fragment.md  GitHub README snippet (`<a><img>`)
 dist/badges.html      local preview sheet
-logos/official/       Simple Icons, recolored #c9d1d9
+logos/official/       Simple Icons + vendor marks, recolored #cfcfcf
 logos/placeholder/    original monograms (no official mark)
 stitch/PROMPT.md      copy-paste prompt
 stitch/contact/       one PNG sheet per category + profile card

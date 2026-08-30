@@ -164,11 +164,16 @@ def main() -> None:
         labeled: list[str] = []
         for name, slug, letters in items:
             file_id = slugify(name)
+            dest_official = ROOT / "logos" / "official" / f"{file_id}.svg"
             if slug:
-                dest_svg = ROOT / "logos" / "official" / f"{file_id}.svg"
-                dest_svg.parent.mkdir(parents=True, exist_ok=True)
-                dest_svg.write_text(paint_official(fetch_svg(slug)), encoding="utf-8")
+                dest_official.parent.mkdir(parents=True, exist_ok=True)
+                dest_official.write_text(paint_official(fetch_svg(slug)), encoding="utf-8")
+                dest_svg = dest_official
                 source = "simple-icons"
+                kind = "official"
+            elif dest_official.exists():
+                dest_svg = dest_official
+                source = "vendor"
                 kind = "official"
             else:
                 dest_svg = ROOT / "logos" / "placeholder" / f"{file_id}.svg"
