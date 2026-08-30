@@ -15,9 +15,16 @@ from build_assets import CATALOG
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "svg"
-PNG = ROOT / "dist" / "glyphs"
-RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/glyphs"
-H = 40
+PNG = ROOT / "dist" / "h56"
+RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/h56"
+H = 56
+MARK = 28
+FONT = 18
+WELL = 34
+WELL_PAIR = 40
+PAD_L, GAP, PAD_R = 14, 12, 18
+TILE = 30
+TILE_FS = 14
 
 HREF = {
     "TypeScript": "https://www.typescriptlang.org",
@@ -104,7 +111,7 @@ def measure(text: str) -> int:
             "-font",
             "DejaVu-Sans",
             "-pointsize",
-            "13",
+            str(FONT),
             f"label:{safe}",
             "-format",
             "%w",
@@ -158,25 +165,29 @@ def grain_layer(width: int, height: int, seed: str) -> str:
 
 def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
     text_w = measure(name)
-    well = 28 if len(icons) == 2 else 24
-    pad_l, gap, pad_r = 10, 9, 13
-    width = pad_l + well + gap + text_w + pad_r
+    well = WELL_PAIR if len(icons) == 2 else WELL
+    width = PAD_L + well + GAP + text_w + PAD_R
     cy = H / 2
     marks: list[str] = []
     if icons:
         if len(icons) == 1:
-            marks.append(icon_group(icons[0], pad_l + (well - 20) / 2, cy - 10, 20))
+            marks.append(
+                icon_group(
+                    icons[0], PAD_L + (well - MARK) / 2, cy - MARK / 2, MARK
+                )
+            )
         else:
-            marks.append(icon_group(icons[0], pad_l, cy - 7, 14))
-            marks.append(icon_group(icons[1], pad_l + 16, cy - 7, 14))
+            pair = 18
+            marks.append(icon_group(icons[0], PAD_L, cy - pair / 2, pair))
+            marks.append(icon_group(icons[1], PAD_L + pair + 4, cy - pair / 2, pair))
     else:
         marks.append(
-            f'<rect x="{pad_l}" y="{cy - 11}" width="22" height="22" fill="#0a0a0c"/>'
-            f'<text x="{pad_l + 11:.1f}" y="{cy + 3.6:.1f}" text-anchor="middle" '
+            f'<rect x="{PAD_L}" y="{cy - TILE / 2}" width="{TILE}" height="{TILE}" fill="#0a0a0c"/>'
+            f'<text x="{PAD_L + TILE / 2:.1f}" y="{cy + TILE_FS * 0.35:.1f}" text-anchor="middle" '
             f'font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
-            f'font-size="10" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
+            f'font-size="{TILE_FS}" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
         )
-    label_x = pad_l + well + gap
+    label_x = PAD_L + well + GAP
     w2 = width * 0.42
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{H}" '
@@ -190,9 +201,9 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
         f"{grain_layer(width, H, name)}"
         f"</g>"
         + "".join(marks)
-        + f'<text x="{label_x}" y="{cy + 4.6:.1f}" '
+        + f'<text x="{label_x}" y="{cy + FONT * 0.36:.1f}" '
         f'font-family="system-ui, -apple-system, Segoe UI, sans-serif" '
-        f'font-size="13" font-weight="600" fill="#f2f2f2">{html.escape(name)}</text>'
+        f'font-size="{FONT}" font-weight="600" fill="#f2f2f2">{html.escape(name)}</text>'
         f"</svg>\n"
     )
     dest.write_text(svg, encoding="utf-8")
@@ -220,8 +231,9 @@ def main() -> None:
         "",
     ]
     for cat, items in CATALOG.items():
-        lines.append(f'<p align="left">')
-        lines.append(f"  <b>{cat}</b><br />")
+        lines.append(f'<p align="left"><b>{cat}</b></p>')
+        lines.append("")
+        lines.append('<p align="left">')
         for name, slug, letters in items:
             if cat == "daily" and name == "RustDesk":
                 continue
@@ -236,7 +248,7 @@ def main() -> None:
                 href = HREF[label]
                 src = f"{RAW}/anydesk-rustdesk.png"
                 lines.append(
-                    f'  <a href="{href}"><img src="{src}" height="40" alt="{html.escape(label)}" /></a>'
+                    f'  <a href="{href}"><img src="{src}" height="{H}" alt="{html.escape(label)}" /></a>'
                 )
                 continue
             dest = OUT / f"{file_id(name)}.svg"
@@ -245,9 +257,11 @@ def main() -> None:
             href = HREF.get(name, "https://github.com/jseramn")
             src = f"{RAW}/{file_id(name)}.png"
             lines.append(
-                f'  <a href="{href}"><img src="{src}" height="40" alt="{html.escape(name)}" /></a>'
+                f'  <a href="{href}"><img src="{src}" height="{H}" alt="{html.escape(name)}" /></a>'
             )
         lines.append("</p>")
+        lines.append("")
+        lines.append("<br />")
         lines.append("")
     fragment = ROOT / "dist" / "profile-fragment.md"
     fragment.write_text("\n".join(lines) + "\n", encoding="utf-8")
