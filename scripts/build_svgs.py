@@ -15,9 +15,9 @@ from build_assets import CATALOG
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "svg"
-PNG = ROOT / "dist" / "matte"
-RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/matte"
-H = 32
+PNG = ROOT / "dist" / "lg"
+RAW = "https://raw.githubusercontent.com/jseramn/jseramn-badges/main/dist/lg"
+H = 40
 
 HREF = {
     "TypeScript": "https://www.typescriptlang.org",
@@ -104,7 +104,7 @@ def measure(text: str) -> int:
             "-font",
             "DejaVu-Sans",
             "-pointsize",
-            "12",
+            "13",
             f"label:{safe}",
             "-format",
             "%w",
@@ -158,23 +158,23 @@ def grain_layer(width: int, height: int, seed: str) -> str:
 
 def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
     text_w = measure(name)
-    well = 22 if len(icons) == 2 else 18
-    pad_l, gap, pad_r = 8, 8, 11
+    well = 24 if len(icons) == 2 else 20
+    pad_l, gap, pad_r = 10, 9, 13
     width = pad_l + well + gap + text_w + pad_r
     cy = H / 2
     marks: list[str] = []
     if icons:
         if len(icons) == 1:
-            marks.append(icon_group(icons[0], pad_l + (well - 14) / 2, cy - 7))
+            marks.append(icon_group(icons[0], pad_l + (well - 16) / 2, cy - 8, 16))
         else:
-            marks.append(icon_group(icons[0], pad_l, cy - 5, 10))
-            marks.append(icon_group(icons[1], pad_l + 12, cy - 5, 10))
+            marks.append(icon_group(icons[0], pad_l, cy - 6, 12))
+            marks.append(icon_group(icons[1], pad_l + 14, cy - 6, 12))
     else:
         marks.append(
-            f'<rect x="{pad_l}" y="{cy - 8}" width="16" height="16" fill="#0a0a0c"/>'
-            f'<text x="{pad_l + 8:.1f}" y="{cy + 2.8:.1f}" text-anchor="middle" '
+            f'<rect x="{pad_l}" y="{cy - 9}" width="18" height="18" fill="#0a0a0c"/>'
+            f'<text x="{pad_l + 9:.1f}" y="{cy + 3.2:.1f}" text-anchor="middle" '
             f'font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
-            f'font-size="8" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
+            f'font-size="9" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
         )
     label_x = pad_l + well + gap
     w2 = width * 0.42
@@ -190,9 +190,9 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
         f"{grain_layer(width, H, name)}"
         f"</g>"
         + "".join(marks)
-        + f'<text x="{label_x}" y="{cy + 4.2:.1f}" '
+        + f'<text x="{label_x}" y="{cy + 4.6:.1f}" '
         f'font-family="system-ui, -apple-system, Segoe UI, sans-serif" '
-        f'font-size="12" font-weight="600" fill="#f2f2f2">{html.escape(name)}</text>'
+        f'font-size="13" font-weight="600" fill="#f2f2f2">{html.escape(name)}</text>'
         f"</svg>\n"
     )
     dest.write_text(svg, encoding="utf-8")
@@ -220,7 +220,7 @@ def main() -> None:
         "",
     ]
     for cat, items in CATALOG.items():
-        lines.append(f'<p align="center">')
+        lines.append(f'<p align="left">')
         lines.append(f"  <sub>{cat}</sub><br />")
         for name, slug, letters in items:
             if cat == "daily" and name == "RustDesk":
@@ -236,7 +236,7 @@ def main() -> None:
                 href = HREF[label]
                 src = f"{RAW}/anydesk-rustdesk.png"
                 lines.append(
-                    f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(label)}" /></a>'
+                    f'  <a href="{href}"><img src="{src}" height="40" alt="{html.escape(label)}" /></a>'
                 )
                 continue
             dest = OUT / f"{file_id(name)}.svg"
@@ -245,7 +245,7 @@ def main() -> None:
             href = HREF.get(name, "https://github.com/jseramn")
             src = f"{RAW}/{file_id(name)}.png"
             lines.append(
-                f'  <a href="{href}"><img src="{src}" height="32" alt="{html.escape(name)}" /></a>'
+                f'  <a href="{href}"><img src="{src}" height="40" alt="{html.escape(name)}" /></a>'
             )
         lines.append("</p>")
         lines.append("")
