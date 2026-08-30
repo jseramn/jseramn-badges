@@ -22,8 +22,9 @@ If Stitch drops images, re-open the project and paste the sheet with Ctrl+V.
 ## Layout
 
 ```
-dist/badges.html      self-contained sheet (no Material ligatures)
-dist/badges.png       rendered sheet used on the GitHub profile
+dist/svg/*.svg        one badge per file — these are what the profile links
+dist/profile-fragment.md  GitHub README snippet (`<a><img>`)
+dist/badges.html      local preview sheet
 logos/official/       Simple Icons, recolored #c9d1d9
 logos/placeholder/    original monograms (no official mark)
 stitch/PROMPT.md      copy-paste prompt
