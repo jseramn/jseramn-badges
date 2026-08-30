@@ -6,6 +6,8 @@ Stitch does not clone this repo. Paste these public URLs, or download the PNGs a
 
 - Prompt (languages only): https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/PROMPT.md
 - Prompt (finish all rows): https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/PROMPT-FINISH.md
+- Design system (Stitch YAML): https://raw.githubusercontent.com/jseramn/jseramn-badges/main/DESIGN.md
+- Noir lock image: https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/contact/noir-reference.jpeg
 - Live chips (copy these): https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/contact/live-chips-reference.png
 - Profile card: https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/contact/profile-card-reference.png
 
