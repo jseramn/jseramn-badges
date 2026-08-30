@@ -151,7 +151,7 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
             marks.append(icon_group(icons[1], pad_l + 12, cy - 5, 10))
     else:
         marks.append(
-            f'<rect x="{pad_l}" y="{cy - 8}" width="16" height="16" rx="1.5" '
+            f'<rect x="{pad_l}" y="{cy - 8}" width="16" height="16" '
             f'fill="#0a0a0c" stroke="#3a3a40"/>'
             f'<text x="{pad_l + 8:.1f}" y="{cy + 2.8:.1f}" text-anchor="middle" '
             f'font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
@@ -168,9 +168,20 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
         f'<stop offset="0.55" stop-color="#1e1e24"/>'
         f'<stop offset="1" stop-color="#08080a"/>'
         f"</linearGradient>"
+        f'<filter id="gn" x="0" y="0" width="1" height="1" '
+        f'filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" '
+        f'color-interpolation-filters="sRGB">'
+        f'<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" '
+        f'seed="4" stitchTiles="stitch" result="n"/>'
+        f'<feColorMatrix type="matrix" values="0 0 0 0 0.78  0 0 0 0 0.78  '
+        f'0 0 0 0 0.82  0 0 0 0.45 0" in="n" result="g"/>'
+        f'<feBlend in="SourceGraphic" in2="g" mode="overlay"/>'
+        f"</filter>"
         f"</defs>"
-        f'<rect x="0.5" y="0.5" width="{width - 1}" height="27" rx="2" '
-        f'fill="url(#pt)" stroke="#4a4a50"/>'
+        f'<rect x="0" y="0" width="{width}" height="28" '
+        f'shape-rendering="crispEdges" fill="url(#pt)" filter="url(#gn)"/>'
+        f'<rect x="0.5" y="0.5" width="{width - 1}" height="27" '
+        f'fill="none" stroke="#4a4a50" shape-rendering="crispEdges"/>'
         + "".join(marks)
         + f'<text x="{label_x}" y="{cy + 4.2:.1f}" '
         f'font-family="system-ui, -apple-system, Segoe UI, sans-serif" '
@@ -213,7 +224,7 @@ def main() -> None:
                 ]
                 write_badge(label, "AR", [i for i in icons if i.exists()], dest)
                 href = HREF[label]
-                src = f"{RAW}/anydesk-rustdesk.svg?v=2"
+                src = f"{RAW}/anydesk-rustdesk.svg?v=3"
                 lines.append(
                     f'  <a href="{href}"><img src="{src}" height="28" alt="{html.escape(label)}" /></a>'
                 )
@@ -222,7 +233,7 @@ def main() -> None:
             icon = official_path(name)
             write_badge(name, letters, [icon] if icon else [], dest)
             href = HREF.get(name, "https://github.com/jseramn")
-            src = f"{RAW}/{file_id(name)}.svg?v=2"
+            src = f"{RAW}/{file_id(name)}.svg?v=3"
             lines.append(
                 f'  <a href="{href}"><img src="{src}" height="28" alt="{html.escape(name)}" /></a>'
             )

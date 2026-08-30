@@ -96,8 +96,8 @@ typography:
     fontWeight: '600'
     lineHeight: 28px
 rounded:
-  sm: 0.125rem
-  badge: 2px
+  sm: 0
+  badge: 0
   DEFAULT: 0.25rem
   md: 0.375rem
   lg: 0.5rem
@@ -149,22 +149,23 @@ Rules:
 Composition borrowed from the reference:
 - Content lives on stacked soft-square cards, slightly overlapping, never a marketing hero.
 - Depth is layering and hairlines, not drop shadows.
-- Optional atmosphere (grain, smoke, circuit traces) stays in the background only. It must not invade the badge row.
+- Atmosphere on the canvas may include grain, smoke, circuit traces.
+- Badge faces carry their own grain. That grain is texture, not atmosphere leaking in.
 
 ## Elevation & Depth
 
 1. Base `#000000`. Cards `#0a0a0a`.
-2. Badges use a vertical platinum noir gradient: `#5a5a64` → `#1e1e24` → `#08080a`. This is metal, not a glow.
-3. 1px hairline `#4a4a50`. **No drop shadow. No filter. No lift.**
+2. Badges use a vertical platinum noir gradient: `#5a5a64` → `#1e1e24` → `#08080a`, then a clipped grain overlay. This is metal + film grain, not a glow.
+3. 1px hairline `#4a4a50`. **No drop shadow. No lift.** The only allowed filter is grain, and its region is clipped to the rect (`x/y/width/height = 0/0/100%/100%`). Never the default −10% filter box — that reads as a shadow.
 4. Overlays may use a 12px blur and a 0.5px `rgba(245,245,245,0.2)` edge — glass as a dark pane, not a rainbow.
 5. No CRT glow. No colored outer glow.
 
 ## Shapes
 
-Soft-square. Not 0px. Not a pill.
+Hard rectangle. Square corners. Flat and sharp.
 
-- Badges: **2px** (chip, not pill, not 8px button)
-- Cards / JSON panels: 8px
+- Badges: **0px**. Not 2px. Not a pill. Not a button.
+- Cards / JSON panels: 0px if they sit with the badge row; 8px only for stacked terminal cards
 - Overlay panes: 12px
 - Pills only for a real action control, never for a tech badge
 
@@ -173,9 +174,9 @@ Soft-square. Not 0px. Not a pill.
 ### Badges (core)
 
 - Height 28px, width hugs the label. Never clip. Never a huge empty tail.
-- Fill: platinum gradient (`platinum-top` → `platinum-base`). Not a flat fill.
-- Stroke 1px `#4a4a50`. Radius **2px**. No shadow.
-- Mark sits in an 18×18 well, optically centered. Official glyphs 14×14 `#cfcfcf`. Monograms live *inside* a 16×16 inset well so `AI` never reads as part of `Aider`.
+- Fill: platinum gradient (`platinum-top` → `platinum-base`) plus clipped `feTurbulence` film grain. Not a flat fill. Not a 2×2 mesh.
+- Stroke 1px `#4a4a50`. Radius **0**. No shadow.
+- Mark sits in an 18×18 square well, optically centered. Official glyphs 14×14 `#cfcfcf`. Monograms live *inside* a 16×16 square well so `AI` never reads as part of `Aider`.
 - Label starts 8px after the well. Geist 12 / 600, `#f2f2f2`. Vertical center shared with the mark (`dominant-baseline: central`, y = 14).
 - AnyDesk and RustDesk remain one chip
 
@@ -185,7 +186,7 @@ Match the floating documents in the reference: black rectangle, monospace JSON, 
 
 ### Placeholder monograms
 
-16×16 inset well, 2-letter Geist Mono 8/600, `#f2f2f2` on `#0a0a0c`, hairline `#3a3a40`. Never sit the letters as loose text next to the label.
+16×16 square well (0 radius), 2-letter Geist Mono 8/600, `#f2f2f2` on `#0a0a0c`, hairline `#3a3a40`. Never sit the letters as loose text next to the label.
 
 ### Inputs / buttons
 

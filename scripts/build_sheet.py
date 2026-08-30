@@ -133,10 +133,13 @@ def main() -> None:
     height: 28px;
     padding: 0 10px 0 7px;
     gap: 8px;
-    background: linear-gradient(180deg, var(--chip-top) 0%, #2a2a32 18%, var(--chip-mid) 55%, var(--chip-base) 100%);
     border: 1px solid var(--stroke);
-    border-radius: 2px;
+    border-radius: 0;
     box-shadow: none;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.28'/></svg>"),
+      linear-gradient(180deg, var(--chip-top) 0%, #2a2a32 18%, var(--chip-mid) 55%, var(--chip-base) 100%);
+    background-blend-mode: overlay, normal;
   }}
   .well {{
     width: 18px;
@@ -164,7 +167,7 @@ def main() -> None:
   .well.mono {{
     width: 16px;
     height: 16px;
-    border-radius: 1.5px;
+    border-radius: 0;
     background: #0a0a0c;
     border: 1px solid #3a3a40;
     font-family: "Geist Mono", ui-monospace, monospace;
