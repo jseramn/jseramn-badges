@@ -89,8 +89,10 @@ def main() -> None:
 <style>
   :root {{
     --bg: #000000;
-    --chip: #111111;
-    --stroke: #2e2e2e;
+    --chip-top: #5a5a64;
+    --chip-mid: #1e1e24;
+    --chip-base: #08080a;
+    --stroke: #4a4a50;
     --ink: #f2f2f2;
     --mute: #8b8b8b;
     --mark: #cfcfcf;
@@ -129,11 +131,12 @@ def main() -> None:
     display: inline-flex;
     align-items: center;
     height: 28px;
-    padding: 0 10px 0 8px;
-    gap: 6px;
-    background: var(--chip);
+    padding: 0 10px 0 7px;
+    gap: 8px;
+    background: linear-gradient(180deg, var(--chip-top) 0%, #2a2a32 18%, var(--chip-mid) 55%, var(--chip-base) 100%);
     border: 1px solid var(--stroke);
-    border-radius: 4px;
+    border-radius: 2px;
+    box-shadow: none;
   }}
   .well {{
     width: 18px;
@@ -158,9 +161,14 @@ def main() -> None:
     display: block;
     fill: #cfcfcf;
   }}
-  .mono {{
+  .well.mono {{
+    width: 16px;
+    height: 16px;
+    border-radius: 1.5px;
+    background: #0a0a0c;
+    border: 1px solid #3a3a40;
     font-family: "Geist Mono", ui-monospace, monospace;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 600;
     letter-spacing: 0;
     line-height: 1;

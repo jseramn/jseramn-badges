@@ -51,9 +51,12 @@ colors:
   canvas-black: '#000000'
   surface-elevated: '#111111'
   ink-panel: '#0a0a0a'
-  border-hairline: '#2e2e2e'
+  border-hairline: '#4a4a50'
   paper-white: '#f5f5f5'
   grain-mid: '#6e6e6e'
+  platinum-top: '#5a5a64'
+  platinum-mid: '#1e1e24'
+  platinum-base: '#08080a'
   success: '#d0d0d0'
   warning: '#9a9a9a'
 typography:
@@ -94,6 +97,7 @@ typography:
     lineHeight: 28px
 rounded:
   sm: 0.125rem
+  badge: 2px
   DEFAULT: 0.25rem
   md: 0.375rem
   lg: 0.5rem
@@ -113,7 +117,7 @@ spacing:
 
 The attached reference (`noir-reference.jpeg`) is the lock. Tone is `NOIR`: pitch black, grain, dither, overlapping terminal cards, organic smoke on one side and hard architecture on the other. No cyan. No pink. No purple. No brand rainbow.
 
-Personality is calculated and developer-first. Information is silver on black. Structure is hairline rectangles stacked like JSON documents. Texture is stipple, not gradient. If a color is not black, white, or gray, it is wrong.
+Personality is calculated and developer-first. Information is silver on black. Structure is hairline rectangles stacked like JSON documents. Atmosphere is stipple. Badge fill is the one allowed gradient: platinum noir metal. If a color is not black, white, or gray, it is wrong.
 
 ## Colors
 
@@ -149,16 +153,17 @@ Composition borrowed from the reference:
 
 ## Elevation & Depth
 
-1. Base `#000000`. Cards `#0a0a0a`. Badges `#111111`.
-2. 1px hairline `#2e2e2e`. No drop shadow on badges.
-3. Overlays may use a 12px blur and a 0.5px `rgba(245,245,245,0.2)` edge — glass as a dark pane, not a rainbow.
-4. No CRT glow. No colored outer glow.
+1. Base `#000000`. Cards `#0a0a0a`.
+2. Badges use a vertical platinum noir gradient: `#5a5a64` → `#1e1e24` → `#08080a`. This is metal, not a glow.
+3. 1px hairline `#4a4a50`. **No drop shadow. No filter. No lift.**
+4. Overlays may use a 12px blur and a 0.5px `rgba(245,245,245,0.2)` edge — glass as a dark pane, not a rainbow.
+5. No CRT glow. No colored outer glow.
 
 ## Shapes
 
 Soft-square. Not 0px. Not a pill.
 
-- Badges: 4px
+- Badges: **2px** (chip, not pill, not 8px button)
 - Cards / JSON panels: 8px
 - Overlay panes: 12px
 - Pills only for a real action control, never for a tech badge
@@ -167,10 +172,11 @@ Soft-square. Not 0px. Not a pill.
 
 ### Badges (core)
 
-- Height 28px, width hugs text
-- Fill `#111111`, stroke 1px `#2e2e2e`
-- Icon 16×16 in an 18px well, color `#cfcfcf`
-- Label Geist 12 / 600, `#f2f2f2`
+- Height 28px, width hugs the label. Never clip. Never a huge empty tail.
+- Fill: platinum gradient (`platinum-top` → `platinum-base`). Not a flat fill.
+- Stroke 1px `#4a4a50`. Radius **2px**. No shadow.
+- Mark sits in an 18×18 well, optically centered. Official glyphs 14×14 `#cfcfcf`. Monograms live *inside* a 16×16 inset well so `AI` never reads as part of `Aider`.
+- Label starts 8px after the well. Geist 12 / 600, `#f2f2f2`. Vertical center shared with the mark (`dominant-baseline: central`, y = 14).
 - AnyDesk and RustDesk remain one chip
 
 ### JSON / terminal cards
@@ -179,7 +185,7 @@ Match the floating documents in the reference: black rectangle, monospace JSON, 
 
 ### Placeholder monograms
 
-Square well, 2-letter Geist Mono, `#f2f2f2` on `#1a1a1a`.
+16×16 inset well, 2-letter Geist Mono 8/600, `#f2f2f2` on `#0a0a0c`, hairline `#3a3a40`. Never sit the letters as loose text next to the label.
 
 ### Inputs / buttons
 

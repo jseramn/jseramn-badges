@@ -139,27 +139,40 @@ def icon_group(path: Path, x: float, y: float, size: float = 14) -> str:
 def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
     text_w = measure(name)
     well = 22 if len(icons) == 2 else 18
-    width = 8 + well + 6 + text_w + 10
-    marks = []
+    pad_l, gap, pad_r = 7, 8, 10
+    width = pad_l + well + gap + text_w + pad_r
+    cy = 14.0
+    marks: list[str] = []
     if icons:
         if len(icons) == 1:
-            marks.append(icon_group(icons[0], 8 + (well - 14) / 2, (28 - 14) / 2))
+            marks.append(icon_group(icons[0], pad_l + (well - 14) / 2, cy - 7))
         else:
-            marks.append(icon_group(icons[0], 8, 9, 10))
-            marks.append(icon_group(icons[1], 8 + 12, 9, 10))
+            marks.append(icon_group(icons[0], pad_l, cy - 5, 10))
+            marks.append(icon_group(icons[1], pad_l + 12, cy - 5, 10))
     else:
         marks.append(
-            f'<text x="{8 + well / 2:.1f}" y="18" text-anchor="middle" '
+            f'<rect x="{pad_l}" y="{cy - 8}" width="16" height="16" rx="1.5" '
+            f'fill="#0a0a0c" stroke="#3a3a40"/>'
+            f'<text x="{pad_l + 8:.1f}" y="{cy + 2.8:.1f}" text-anchor="middle" '
             f'font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
-            f'font-size="9" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
+            f'font-size="8" font-weight="600" fill="#f2f2f2">{html.escape(letters)}</text>'
         )
+    label_x = pad_l + well + gap
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="28" '
         f'viewBox="0 0 {width} 28" role="img" aria-label="{html.escape(name)}">'
-        f'<rect x="0.5" y="0.5" width="{width - 1}" height="27" rx="4" '
-        f'fill="#111111" stroke="#2e2e2e"/>'
+        f"<defs>"
+        f'<linearGradient id="pt" x1="0" y1="0" x2="0" y2="1">'
+        f'<stop offset="0" stop-color="#5a5a64"/>'
+        f'<stop offset="0.18" stop-color="#2a2a32"/>'
+        f'<stop offset="0.55" stop-color="#1e1e24"/>'
+        f'<stop offset="1" stop-color="#08080a"/>'
+        f"</linearGradient>"
+        f"</defs>"
+        f'<rect x="0.5" y="0.5" width="{width - 1}" height="27" rx="2" '
+        f'fill="url(#pt)" stroke="#4a4a50"/>'
         + "".join(marks)
-        + f'<text x="{8 + well + 6}" y="18.5" '
+        + f'<text x="{label_x}" y="{cy + 4.2:.1f}" '
         f'font-family="system-ui, -apple-system, Segoe UI, sans-serif" '
         f'font-size="12" font-weight="600" fill="#f2f2f2">{html.escape(name)}</text>'
         f"</svg>\n"
@@ -200,7 +213,7 @@ def main() -> None:
                 ]
                 write_badge(label, "AR", [i for i in icons if i.exists()], dest)
                 href = HREF[label]
-                src = f"{RAW}/anydesk-rustdesk.svg"
+                src = f"{RAW}/anydesk-rustdesk.svg?v=2"
                 lines.append(
                     f'  <a href="{href}"><img src="{src}" height="28" alt="{html.escape(label)}" /></a>'
                 )
@@ -209,7 +222,7 @@ def main() -> None:
             icon = official_path(name)
             write_badge(name, letters, [icon] if icon else [], dest)
             href = HREF.get(name, "https://github.com/jseramn")
-            src = f"{RAW}/{file_id(name)}.svg"
+            src = f"{RAW}/{file_id(name)}.svg?v=2"
             lines.append(
                 f'  <a href="{href}"><img src="{src}" height="28" alt="{html.escape(name)}" /></a>'
             )
