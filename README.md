@@ -8,11 +8,13 @@ Shields + Skillicons cannot share one size, one color, or one logo treatment. Ha
 
 ## How to run Stitch
 
+The pack lives on this public repo. Stitch does **not** clone GitHub; it can take a public URL or an attached image.
+
 1. Open [stitch.withgoogle.com](https://stitch.withgoogle.com) and switch to **Web**.
-2. Attach `stitch/contact/profile-card-reference.png`.
-3. Attach one contact sheet (`languages.png`, then `stack.png`, …). Stitch is happier with one sheet per pass than 70 files.
-4. Paste `stitch/PROMPT.md`.
-5. Export the sheet. Drop finished SVG/PNG chips into `dist/` (create it when the first export lands).
+2. Paste or attach the profile card: `https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/contact/profile-card-reference.png`
+3. Then one contact sheet (`languages.png`, then `stack`, …). Full URL list: [`stitch/SOURCES.md`](stitch/SOURCES.md).
+4. Paste [`stitch/PROMPT.md`](https://raw.githubusercontent.com/jseramn/jseramn-badges/main/stitch/PROMPT.md).
+5. Export the sheet. Drop finished SVG/PNG chips into `dist/` when the first export lands.
 
 If Stitch drops images, re-open the project and paste the sheet with Ctrl+V.
 
