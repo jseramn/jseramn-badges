@@ -1,5 +1,7 @@
 # jseramn-badges
 
+[![Badge assets](https://github.com/jseramn/jseramn-badges/actions/workflows/ci.yml/badge.svg)](https://github.com/jseramn/jseramn-badges/actions/workflows/ci.yml)
+
 Custom GitHub profile badges for [jseramn](https://github.com/jseramn). The public profile still uses temporary Shields chips. This repo is the design pack for replacing them with one system.
 
 ## Why this exists
