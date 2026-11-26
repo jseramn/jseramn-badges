@@ -76,7 +76,7 @@ CATALOG: dict[str, list[tuple[str, str | None, str]]] = {
         ("uv", "uv", "UV"),
         ("FFmpeg", "ffmpeg", "FF"),
         ("Doppler", None, "DP"),
-        ("scrcpy", None, "SP"),
+        ("scrcpy", "scrcpy", "SP"),
     ],
     "daily": [
         ("Obsidian", "obsidian", "OB"),
