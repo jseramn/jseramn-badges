@@ -1,0 +1,26 @@
+name: Badge assets
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check published SVGs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree
+          badges = list(Path("dist/svg").glob("*.svg"))
+          assert badges
+          for badge in badges:
+              ElementTree.parse(badge)
+          print(f"{len(badges)} badges verified")
+          PY
