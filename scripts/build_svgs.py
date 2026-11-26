@@ -187,11 +187,11 @@ def write_badge(name: str, letters: str, icons: list[Path], dest: Path) -> int:
         f"</linearGradient>"
         f"</defs>"
         f'<g clip-path="url(#face)">'
-        f'<rect x="0" y="0" width="{width}" height="{H}" fill="#0D172A"/>'
+        f'<rect x="0" y="0" width="{width}" height="{H}" fill="#0E1118"/>'
         f'<polygon points="{w2:.1f},{H} {width},{H} {width},0" fill="#823CFA" opacity="0.10"/>'
         f"{grain_layer(width, H, name)}"
         f'<rect x="0" y="{H - 2}" width="{width}" height="2" fill="url(#neonline)"/>'
-        f'<rect x="0.5" y="0.5" width="{width - 1}" height="{H - 1}" fill="none" stroke="#E0E6ED" stroke-opacity="0.12"/>'
+        f'<rect x="0.5" y="0.5" width="{width - 1}" height="{H - 1}" fill="none" stroke="#823CFA" stroke-opacity="0.45"/>'
         f"</g>"
         + "".join(marks)
         + f'<text x="{label_x}" y="{cy + FONT * 0.36:.1f}" '
